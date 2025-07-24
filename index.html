@@ -213,7 +213,6 @@ body {
 }
 .toast-notification.show { transform: translate(-50%, 0); }
 
-/* --- REVERTED: Skills Section Styling --- */
 .skills-category { text-align: center; margin-bottom: 30px; }
 .skills-category h3 { font-family: var(--font-heading); font-size: 1.6em; color: var(--accent-color); margin-bottom: 20px; }
 .skills-list { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
@@ -261,7 +260,6 @@ body {
 .education-details ul { padding-left: 20px; margin: 0; }
 .education-details li { line-height: 1.6; }
 
-/* --- REVERTED: Publications Section Styling --- */
 .publications-list { max-width: 1100px; margin: 0 auto; padding-left: 0; list-style-type: none; }
 .publication-item { background-color: #f8f9fa; margin-bottom: 12px; border-radius: 8px; border: 1px solid #e9ecef; cursor: pointer; transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; position: relative; }
 .publication-title-area { padding: 15px 50px 15px 20px; line-height: 1.7; text-align: justify; }
@@ -285,7 +283,6 @@ body {
 .publication-actions .copy-btn { background-color: var(--accent-color); color: #fff; cursor: pointer; font-family: var(--font-main); }
 .publication-actions .copy-btn:hover { background-color: var(--accent-hover-color); border-color: var(--accent-hover-color); }
 
-/* --- REVERTED: Presentations Section Styling --- */
 .presentations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
 .presentation-card { background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .presentation-card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
@@ -780,7 +777,6 @@ D. Pujara, P. Kukreja and S. Gajjar, "Design and Development of E-Sense: IoT bas
             <a href="mailto:dpujara1@asu.edu">dpujara1@asu.edu</a>
         </div>
         <div class="contact-form-wrapper">
-            <!-- THIS IS THE LINE THAT IS CHANGED -->
             <form id="contact-form">
                 <div class="input-group">
                     <input type="text" name="name" placeholder="Name" required>
@@ -826,11 +822,10 @@ D. Pujara, P. Kukreja and S. Gajjar, "Design and Development of E-Sense: IoT bas
 
 <div class="toast-notification" id="toast-notification"></div>
 
-<!-- THIS ENTIRE SCRIPT BLOCK IS REPLACED -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- PART 1: UI & INTERACTIVITY (Your existing code, unchanged) ---
+    // --- PART 1: UI & INTERACTIVITY ---
     tsParticles.load("tsparticles",{fullScreen:{enable:!1},background:{color:"#ffffff00"},particles:{number:{value:50},color:{value:"#6a6a6a"},shape:{type:"circle"},opacity:{value:.5},size:{value:{min:1,max:5}},move:{enable:!0,speed:1.5,direction:"none",outModes:"bounce"},links:{enable:!0,distance:150,color:"#6a6a6a",opacity:.3,width:1}},interactivity:{events:{onHover:{enable:!0,mode:"repulse"},onClick:{enable:!0,mode:"push"}},modes:{repulse:{distance:100},push:{quantity:4}}}});
     const company="Skyworks Solutions",typeElem=document.getElementById("typewriter-company");let letterIndex=0,typing=!0;function typeCompanyLoop(){if(!typeElem)return;typing?letterIndex<=company.length?(typeElem.innerHTML=`<span class="company-color">${company.slice(0,letterIndex++)}</span>`,setTimeout(typeCompanyLoop,90)):(typing=!1,setTimeout(typeCompanyLoop,1200)):letterIndex>0?(typeElem.innerHTML=`<span class="company-color">${company.slice(0,--letterIndex)}</span>`,setTimeout(typeCompanyLoop,40)):(typing=!0,setTimeout(typeCompanyLoop,500))}typeCompanyLoop();
     const pythonSkillTrigger=document.getElementById("python-skill-trigger"),pythonPackages=document.getElementById("python-packages-category");pythonSkillTrigger&&pythonSkillTrigger.addEventListener("click",()=>{const t=pythonPackages.classList.toggle("visible");pythonSkillTrigger.classList.toggle("expanded")});
@@ -843,7 +838,7 @@ document.addEventListener('DOMContentLoaded', () => {
     stars.forEach(star => {star.addEventListener("mouseover", () => updateStarsUI(star.dataset.value, true));star.addEventListener("mouseout", () => updateStarsUI(currentRating));star.addEventListener("click", () => {currentRating = parseInt(star.dataset.value);updateStarsUI(currentRating);});});
 
 
-    // --- PART 2: FORM HANDLING (NEW AND CORRECTED CODE) ---
+    // --- PART 2: FORM HANDLING ---
 
     // A) Contact Form
     const contactForm = document.getElementById('contact-form');
@@ -907,13 +902,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     closeFeedbackModal();
                     setTimeout(() => {
-                        feedbackContentWrapper.style.display="block";
-                        feedbackThankYou.style.display="none";
-                        feedbackSubmitBtn.disabled=false;
-                        feedbackSubmitBtn.textContent="Submit";
-                        currentRating=0;
+                        feedbackContentWrapper.style.display = "block";
+                        feedbackThankYou.style.display = "none";
+                        feedbackSubmitBtn.disabled = false;
+                        feedbackSubmitBtn.textContent = "Submit";
+                        currentRating = 0;
                         updateStarsUI(0);
-                        feedbackText.value="";
+                        feedbackText.value = "";
                     }, 500);
                 }, 2500);
             } catch (error) {
@@ -923,6 +918,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
 
     // --- PART 3: CHATBOT LOGIC ---
     const CHAT_API_ENDPOINT = '/api/chat', MAX_MESSAGES = 5;
