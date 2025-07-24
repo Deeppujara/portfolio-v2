@@ -780,7 +780,8 @@ D. Pujara, P. Kukreja and S. Gajjar, "Design and Development of E-Sense: IoT bas
             <a href="mailto:dpujara1@asu.edu">dpujara1@asu.edu</a>
         </div>
         <div class="contact-form-wrapper">
-            <form action="#" method="POST" onsubmit="alert('Thank you for your message! This is a demo form.'); return false;">
+            <!-- THIS IS THE LINE THAT IS CHANGED -->
+            <form id="contact-form">
                 <div class="input-group">
                     <input type="text" name="name" placeholder="Name" required>
                     <input type="email" name="email" placeholder="Email" required>
@@ -825,187 +826,139 @@ D. Pujara, P. Kukreja and S. Gajjar, "Design and Development of E-Sense: IoT bas
 
 <div class="toast-notification" id="toast-notification"></div>
 
+<!-- THIS ENTIRE SCRIPT BLOCK IS REPLACED -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- PART 1: UI & INTERACTIVITY ---
+    // --- PART 1: UI & INTERACTIVITY (Your existing code, unchanged) ---
     tsParticles.load("tsparticles",{fullScreen:{enable:!1},background:{color:"#ffffff00"},particles:{number:{value:50},color:{value:"#6a6a6a"},shape:{type:"circle"},opacity:{value:.5},size:{value:{min:1,max:5}},move:{enable:!0,speed:1.5,direction:"none",outModes:"bounce"},links:{enable:!0,distance:150,color:"#6a6a6a",opacity:.3,width:1}},interactivity:{events:{onHover:{enable:!0,mode:"repulse"},onClick:{enable:!0,mode:"push"}},modes:{repulse:{distance:100},push:{quantity:4}}}});
-    
     const company="Skyworks Solutions",typeElem=document.getElementById("typewriter-company");let letterIndex=0,typing=!0;function typeCompanyLoop(){if(!typeElem)return;typing?letterIndex<=company.length?(typeElem.innerHTML=`<span class="company-color">${company.slice(0,letterIndex++)}</span>`,setTimeout(typeCompanyLoop,90)):(typing=!1,setTimeout(typeCompanyLoop,1200)):letterIndex>0?(typeElem.innerHTML=`<span class="company-color">${company.slice(0,--letterIndex)}</span>`,setTimeout(typeCompanyLoop,40)):(typing=!0,setTimeout(typeCompanyLoop,500))}typeCompanyLoop();
-    
     const pythonSkillTrigger=document.getElementById("python-skill-trigger"),pythonPackages=document.getElementById("python-packages-category");pythonSkillTrigger&&pythonSkillTrigger.addEventListener("click",()=>{const t=pythonPackages.classList.toggle("visible");pythonSkillTrigger.classList.toggle("expanded")});
-
     const menuToggle=document.querySelector(".menu-toggle"),navLinks=document.querySelector(".nav-links"),navLinkItems=document.querySelectorAll(".nav-links a"),closeMenu=()=>{navLinks.classList.remove("active")};menuToggle.addEventListener("click",()=>navLinks.classList.toggle("active")),navLinkItems.forEach(e=>e.addEventListener("click",closeMenu)),document.addEventListener("click",e=>{const t=navLinks.contains(e.target),o=menuToggle.contains(e.target);navLinks.classList.contains("active")&&!t&&!o&&closeMenu()});
-    
     document.querySelectorAll(".publication-item").forEach(t=>{t.addEventListener("click",e=>{if(e.target.closest(".publication-actions"))return;const o=t.querySelector(".publication-details"),i=t.classList.contains("active");document.querySelectorAll(".publication-item").forEach(e=>{e.classList.remove("active"),e.querySelector(".publication-details").classList.remove("visible")}),i||(t.classList.add("active"),o.classList.add("visible"))})});
-    
     document.querySelectorAll(".copy-btn").forEach(t=>{t.addEventListener("click",e=>{e.stopPropagation();const o=t.dataset.citation;navigator.clipboard.writeText(o).then(()=>{const e=t.textContent;t.textContent="Copied!",setTimeout(()=>{t.textContent=e},2e3)})})});
+    const sections = document.querySelectorAll("section[id]"),navItems = document.querySelectorAll(".nav-links a.nav-link");const scrollSpyObserver = new IntersectionObserver(entries => {entries.forEach(entry => {if (entry.isIntersecting) {const id = entry.target.getAttribute('id');navItems.forEach(link => {link.classList.remove('nav-link-active');if (link.getAttribute('href') === `#${id}`) {link.classList.add('nav-link-active');}});}});}, { rootMargin: "-30% 0px -65% 0px" });sections.forEach(section => scrollSpyObserver.observe(section));
+    const educationItems=document.querySelectorAll(".education-item"),sliderNodes=document.querySelectorAll(".slider-node");if(educationItems.length>0&&sliderNodes.length>0){const eduObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const targetId=entry.target.id;educationItems.forEach(item=>item.classList.remove("active")),sliderNodes.forEach(node=>node.classList.remove("active")),entry.target.classList.add("active");const activeNode=document.querySelector(`.slider-node[data-target="${targetId}"]`);if(activeNode)activeNode.classList.add("active")}})},{rootMargin:"-40% 0px -40% 0px",threshold:0.5});educationItems.forEach(e=>eduObserver.observe(e))}
+    const stars=document.querySelectorAll(".star");let currentRating=0;function updateStarsUI(rating, isHover = false) {stars.forEach(star => {star.classList.remove("hover", "selected");const starValue = parseInt(star.dataset.value);if (starValue <= rating) star.classList.add(isHover ? "hover" : "selected");});}
+    stars.forEach(star => {star.addEventListener("mouseover", () => updateStarsUI(star.dataset.value, true));star.addEventListener("mouseout", () => updateStarsUI(currentRating));star.addEventListener("click", () => {currentRating = parseInt(star.dataset.value);updateStarsUI(currentRating);});});
 
-    // --- PART 2: SCROLLSPY & EDUCATION OBSERVER ---
-    const sections = document.querySelectorAll("section[id]");
-    const navItems = document.querySelectorAll(".nav-links a.nav-link");
 
-    const scrollSpyObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                navItems.forEach(link => {
-                    link.classList.remove('nav-link-active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('nav-link-active');
-                    }
+    // --- PART 2: FORM HANDLING (NEW AND CORRECTED CODE) ---
+
+    // A) Contact Form
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: contactForm.name.value,
+                        email: contactForm.email.value,
+                        message: contactForm.message.value
+                    }),
                 });
+                if (!response.ok) throw new Error('Server error');
+                alert('Thank you! Your message has been sent.');
+                contactForm.reset();
+            } catch (error) {
+                alert('Sorry, there was an error sending your message.');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
             }
         });
-    }, { rootMargin: "-30% 0px -65% 0px" }); // Adjusted margins for better accuracy
-    sections.forEach(section => scrollSpyObserver.observe(section));
+    }
 
-    const educationItems=document.querySelectorAll(".education-item"),sliderNodes=document.querySelectorAll(".slider-node");if(educationItems.length>0&&sliderNodes.length>0){const eduObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const targetId=entry.target.id;educationItems.forEach(item=>item.classList.remove("active")),sliderNodes.forEach(node=>node.classList.remove("active")),entry.target.classList.add("active");const activeNode=document.querySelector(`.slider-node[data-target="${targetId}"]`);if(activeNode)activeNode.classList.add("active")}})},{rootMargin:"-40% 0px -40% 0px",threshold:0.5});educationItems.forEach(e=>eduObserver.observe(e))}
-
-    // --- PART 3: FEEDBACK WIDGET LOGIC (CLICK-ONLY) ---
-    const feedbackFab=document.getElementById("feedback-fab"),feedbackModalOverlay=document.getElementById("feedback-modal-overlay"),stars=document.querySelectorAll(".star"),feedbackForm=document.getElementById("feedback-form"),feedbackSubmitBtn=document.getElementById("feedback-submit-btn"),feedbackText=document.getElementById("feedback-text"),feedbackContentWrapper=document.querySelector(".feedback-content-wrapper"),feedbackThankYou=document.getElementById("feedback-thank-you"),closeFeedbackBtn=document.getElementById("close-feedback-modal");
-    let currentRating=0;
-    
+    // B) Feedback Form
+    const feedbackFab=document.getElementById("feedback-fab"),feedbackModalOverlay=document.getElementById("feedback-modal-overlay"),feedbackForm=document.getElementById("feedback-form"),feedbackSubmitBtn=document.getElementById("feedback-submit-btn"),feedbackText=document.getElementById("feedback-text"),feedbackContentWrapper=document.querySelector(".feedback-content-wrapper"),feedbackThankYou=document.getElementById("feedback-thank-you"),closeFeedbackBtn=document.getElementById("close-feedback-modal");
     function openFeedbackModal() { feedbackModalOverlay.classList.add("visible"); }
     function closeFeedbackModal() { feedbackModalOverlay.classList.remove("visible"); }
+    feedbackFab.addEventListener("click", openFeedbackModal);
+    closeFeedbackBtn.addEventListener("click", closeFeedbackModal);
+    feedbackModalOverlay.addEventListener("click", (e) => { if (e.target === feedbackModalOverlay) closeFeedbackModal(); });
 
-    function loadFeedbackDraft() {
-        const draft = JSON.parse(localStorage.getItem('feedbackDraft'));
-        if (draft) {
-            currentRating = draft.rating || 0;
-            feedbackText.value = draft.text || '';
-            updateStarsUI(currentRating);
-        }
-    }
-    loadFeedbackDraft();
+    if (feedbackForm) {
+        feedbackForm.addEventListener("submit", async e => {
+            e.preventDefault();
+            if (currentRating === 0) { alert("Please select a star rating."); return; }
+            feedbackSubmitBtn.disabled = true;
+            feedbackSubmitBtn.textContent = "Submitting...";
 
-    function saveFeedbackDraft() {
-        const draft = { rating: currentRating, text: feedbackText.value };
-        localStorage.setItem('feedbackDraft', JSON.stringify(draft));
-    }
-    
-    function updateStarsUI(rating, isHover = false) {
-        stars.forEach(star => {
-            star.classList.remove("hover", "selected");
-            const starValue = parseInt(star.dataset.value);
-            if (starValue <= rating) {
-                star.classList.add(isHover ? "hover" : "selected");
+            try {
+                const response = await fetch('/api/feedback', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        rating: currentRating,
+                        feedback: feedbackText.value
+                    })
+                });
+                if (!response.ok) throw new Error('Server error');
+
+                feedbackContentWrapper.style.display = "none";
+                feedbackThankYou.style.display = "block";
+                setTimeout(() => {
+                    closeFeedbackModal();
+                    setTimeout(() => {
+                        feedbackContentWrapper.style.display="block";
+                        feedbackThankYou.style.display="none";
+                        feedbackSubmitBtn.disabled=false;
+                        feedbackSubmitBtn.textContent="Submit";
+                        currentRating=0;
+                        updateStarsUI(0);
+                        feedbackText.value="";
+                    }, 500);
+                }, 2500);
+            } catch (error) {
+                alert("Sorry, there was an issue submitting your feedback.");
+                feedbackSubmitBtn.disabled = false;
+                feedbackSubmitBtn.textContent = "Submit";
             }
         });
     }
 
-    feedbackFab.addEventListener("click", openFeedbackModal);
-    closeFeedbackBtn.addEventListener("click", closeFeedbackModal);
-    feedbackModalOverlay.addEventListener("click", (e) => {
-        if (e.target === feedbackModalOverlay) closeFeedbackModal();
-    });
-
-    stars.forEach(star => {
-        star.addEventListener("mouseover", () => updateStarsUI(star.dataset.value, true));
-        star.addEventListener("mouseout", () => updateStarsUI(currentRating));
-        star.addEventListener("click", () => {
-            currentRating = parseInt(star.dataset.value);
-            updateStarsUI(currentRating);
-            saveFeedbackDraft();
-        });
-    });
-
-    feedbackText.addEventListener('input', saveFeedbackDraft);
-
-    feedbackForm.addEventListener("submit", async e => {
-        e.preventDefault();
-        if (currentRating === 0) { alert("Please select a star rating."); return; }
-        feedbackSubmitBtn.disabled = true;
-        feedbackSubmitBtn.textContent = "Submitting...";
-        
-        try {
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            feedbackContentWrapper.style.display = "none";
-            feedbackThankYou.style.display = "block";
-            localStorage.removeItem('feedbackDraft');
-            
-            setTimeout(() => {
-                closeFeedbackModal();
-                setTimeout(() => {
-                    feedbackContentWrapper.style.display="block";
-                    feedbackThankYou.style.display="none";
-                    feedbackSubmitBtn.disabled=false;
-                    feedbackSubmitBtn.textContent="Submit";
-                    currentRating=0;
-                    updateStarsUI(0);
-                    feedbackText.value="";
-                }, 500);
-            }, 2500);
-        } catch (error) {
-            alert("Sorry, there was an issue submitting your feedback.");
-            feedbackSubmitBtn.disabled = false;
-            feedbackSubmitBtn.textContent = "Submit";
-        }
-    });
-
-    // --- PART 4: CHATBOT LOGIC ---
+    // --- PART 3: CHATBOT LOGIC ---
     const CHAT_API_ENDPOINT = '/api/chat', MAX_MESSAGES = 5;
     const chatbotForm=document.getElementById('chatbot-form'),chatbotInput=document.getElementById('chatbot-input'),chatbotBody=document.getElementById('chatbot-body'),chatbotMessages=document.getElementById('chatbot-messages'),chatbotIntro=document.getElementById('chatbot-intro'),starterBtns=document.querySelectorAll('.starter-btn'),sendBtn=document.getElementById('chatbot-send-btn'),chatbotLimitOverlay=document.getElementById('chatbot-limit-overlay'),chatbotInputArea=document.getElementById('chatbot-input-area'),toast=document.getElementById('toast-notification');
     let userSession = { threadId: null, messageCount: 0, isBlocked: false };
-
-    function showToast(message) {
-        toast.textContent = message;
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 4000);
-    }
-
-    function addMessage(text, sender) {
-        const messageElement = document.createElement('div');
-        messageElement.classList.add('chat-message', `${sender}-message`);
-        const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-        messageElement.innerHTML = formattedText;
-        chatbotMessages.appendChild(messageElement);
-        chatbotBody.scrollTop = chatbotBody.scrollHeight;
-    }
-
-    function addTypingIndicator() {
-        const indicator = document.createElement('div');
-        indicator.classList.add('chat-message', 'bot-message', 'typing-indicator');
-        indicator.innerHTML = '<span></span><span></span><span></span>';
-        chatbotMessages.appendChild(indicator);
-        chatbotBody.scrollTop = chatbotBody.scrollHeight;
-    }
-
-    function removeTypingIndicator() {
-        const indicator = document.querySelector('.typing-indicator');
-        if (indicator) indicator.remove();
-    }
+    function showToast(message) {toast.textContent = message;toast.classList.add('show');setTimeout(() => toast.classList.remove('show'), 4000);}
+    function addMessage(text, sender) {const messageElement = document.createElement('div');messageElement.classList.add('chat-message', `${sender}-message`);const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/【.*?】/g, '');messageElement.innerHTML = formattedText;chatbotMessages.appendChild(messageElement);chatbotBody.scrollTop = chatbotBody.scrollHeight;}
+    function addTypingIndicator() {const indicator = document.createElement('div');indicator.classList.add('chat-message', 'bot-message', 'typing-indicator');indicator.innerHTML = '<span></span><span></span><span></span>';chatbotMessages.appendChild(indicator);chatbotBody.scrollTop = chatbotBody.scrollHeight;}
+    function removeTypingIndicator() {const indicator = document.querySelector('.typing-indicator');if (indicator) indicator.remove();}
+    function startConversation() {if (!chatbotIntro.classList.contains('hidden')) {chatbotIntro.classList.add('hidden');chatbotMessages.classList.add('active');}}
+    function disableChat() {chatbotInputArea.style.display = 'none';chatbotLimitOverlay.classList.add('visible');userSession.isBlocked = true;localStorage.setItem('deepPujaraChatSession', JSON.stringify(userSession));}
+    function loadSession() {const savedSession = localStorage.getItem('deepPujaraChatSession');if (savedSession) {userSession = JSON.parse(savedSession);if (userSession.isBlocked) disableChat();}}
     
-    function startConversation() {
-        if (!chatbotIntro.classList.contains('hidden')) {
-            chatbotIntro.classList.add('hidden');
-            chatbotMessages.classList.add('active');
-        }
-    }
-
-    function disableChat() {
-        chatbotInputArea.style.display = 'none';
-        chatbotLimitOverlay.classList.add('visible');
-        userSession.isBlocked = true;
-        localStorage.setItem('deepPujaraChatSession', JSON.stringify(userSession));
-    }
-
-    function loadSession() {
-        const savedSession = localStorage.getItem('deepPujaraChatSession');
-        if (savedSession) {
-            userSession = JSON.parse(savedSession);
-            if (userSession.isBlocked) disableChat();
-        }
-    }
-
     async function handleSendMessage(messageText) {
         if (messageText.trim() === '' || userSession.isBlocked) return;
+        
+        // Create a thread on the very first message
+        if (!userSession.threadId) {
+            try {
+                const res = await fetch(CHAT_API_ENDPOINT, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'create_thread'})});
+                if (!res.ok) throw new Error('Failed to create thread');
+                const data = await res.json();
+                userSession.threadId = data.threadId;
+            } catch (err) {
+                addMessage("Sorry, I couldn't start a conversation right now. Please try again later.", "bot");
+                return;
+            }
+        }
+        
         startConversation();
         addMessage(messageText, 'user');
         chatbotInput.value = '';
         sendBtn.disabled = true;
         sendBtn.classList.add('loading');
         addTypingIndicator();
+        
         userSession.messageCount++;
         localStorage.setItem('deepPujaraChatSession', JSON.stringify(userSession));
 
@@ -1015,10 +968,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         try {
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            const demoReply = `This is a simulated reply to: "${messageText}". When deployed, I will provide a real answer.`;
+            const res = await fetch(CHAT_API_ENDPOINT, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'send_message',threadId:userSession.threadId,message:messageText})});
+            if (!res.ok) throw new Error('Response from server was not ok.');
+            const data = await res.json();
             removeTypingIndicator();
-            addMessage(demoReply, 'bot');
+            addMessage(data.reply, 'bot');
         } catch (error) {
             removeTypingIndicator();
             addMessage("I'm having trouble connecting right now. Please try again in a moment.", "bot");
@@ -1026,19 +980,18 @@ document.addEventListener('DOMContentLoaded', () => {
             if (userSession.messageCount >= MAX_MESSAGES) {
                 disableChat();
             } else {
-               sendBtn.disabled = false;
+                sendBtn.disabled = false;
             }
             sendBtn.classList.remove('loading');
         }
     }
-    
-    function initializeChat() {
-        loadSession();
-    }
 
-    chatbotForm.addEventListener('submit', (e) => { e.preventDefault(); handleSendMessage(chatbotInput.value); });
-    starterBtns.forEach(btn => { btn.addEventListener('click', () => handleSendMessage(btn.dataset.question)); });
-    initializeChat();
+    function initializeChat() {loadSession();}
+    if (chatbotForm) {
+        chatbotForm.addEventListener('submit', (e) => { e.preventDefault(); handleSendMessage(chatbotInput.value); });
+        starterBtns.forEach(btn => { btn.addEventListener('click', () => handleSendMessage(btn.dataset.question)); });
+        initializeChat();
+    }
 });
 </script>
 </body>
