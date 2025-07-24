@@ -1,7 +1,7 @@
 // File: /api/chat.js
 import OpenAI from 'openai';
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY});
 const ASSISTANT_ID = 'asst_4LuT1UN1dpAiWcaAk11emoZs';
 
 export default async function handler(req, res) {
