@@ -964,18 +964,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         try {
-            const res = await fetch(CHAT_API_ENDPOINT, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'send_message',threadId:userSession.threadId,message:messageText})});
+            const res = await fetch(CHAT_API_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ action: 'send_message', threadId: userSession.threadId, message: messageText })
+            });
             if (!res.ok) throw new Error('Response from server was not ok.');
             const data = await res.json();
             removeTypingIndicator();
-            addMessage(data.reply, 'bot');
+            addMessage(data.reply, 'bot'); // Display the bot's response
+
+            // NOW, check if the message limit is reached and disable the chat
+            if (userSession.messageCount >= MAX_MESSAGES) {
+                disableChat();
+            }
+
         } catch (error) {
             removeTypingIndicator();
             addMessage("I'm having trouble connecting right now. Please try again in a moment.", "bot");
         } finally {
-            if (userSession.messageCount >= MAX_MESSAGES) {
-                disableChat();
-            } else {
+            // The finally block now only manages the button state
+            if (userSession.messageCount < MAX_MESSAGES) {
                 sendBtn.disabled = false;
             }
             sendBtn.classList.remove('loading');
