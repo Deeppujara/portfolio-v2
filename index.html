@@ -53,6 +53,34 @@ body {
   z-index: 1;
 }
 
+/* --- Add these new rules for chatbot message styling --- */
+.bot-message h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1em;
+  margin: 1em 0 0.5em 0;
+  color: var(--text-heading);
+}
+
+.bot-message ul {
+  padding-left: 20px;
+  margin: 0;
+  list-style-type: circle; /* Updated for hollow circle bullets */
+}
+
+.bot-message li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.bot-message p {
+  margin: 0;
+  padding: 0;
+}
+
+.bot-message p + p {
+  margin-top: 0.75em; /* Add space between paragraphs */
+}
+
 /* --- MODIFIED: Adjusted padding for Hero section --- */
 .hero.section-container {
     padding-top: 40px;
@@ -980,11 +1008,31 @@ document.addEventListener('DOMContentLoaded', () => {
     let userSession = { threadId: null };
 
     function markdownToHTML(text) {
-        return text
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            .replace(/\n- /g, '<br>• ')
-            .replace(/\n\d+\. /g, '<br>')
-            .replace(/\n/g, '<br>');
+        let html = text;
+
+        // 1. Handle Headings (e.g., ### Title)
+        html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+
+        // 2. Handle Bold (e.g., **Objective:**)
+        html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+        // 3. Handle Lists (lines starting with - or *)
+        html = html.replace(/^\s*[-*] (.*)/gm, '<li>$1</li>');
+        html = html.replace(/<\/li><li>/g, '</li>\n<li>'); // Add newline for cleaner HTML
+        html = html.replace(/<li>/g, '<ul><li>');
+        html = html.replace(/<\/li>/g, '</li></ul>');
+        html = html.replace(/<\/ul>\s?<ul>/g, ''); // Merge adjacent lists
+
+        // 4. Handle remaining lines as paragraphs
+        html = html.split('\n').map(line => {
+            if (line.trim() === '') return '';
+            if (line.startsWith('<h') || line.startsWith('<ul') || line.startsWith('<li')) {
+                return line;
+            }
+            return `<p>${line}</p>`;
+        }).join('');
+
+        return html;
     }
 
     async function streamMessage(text, messageElement) {
@@ -1047,7 +1095,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (messageText.trim() === '') return;
         
         // Log the user's question for model improvement
-        console.log("User asked:", messageText);
+        // --- Replace the console.log with this block ---
+        try {
+        // Fire-and-forget the logging request so it doesn't slow down the chat.
+        fetch('/api/log-question', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ question: messageText })
+        });
+        } catch (error) {
+        // This will only catch local errors, not server errors.
+        console.error("Failed to initiate question log:", error);
+        }
+        // --- End of replacement ---
         // In a real application, you would send this to your logging service:
         // fetch('/api/log-question', { method: 'POST', body: JSON.stringify({ question: messageText }) });
         
