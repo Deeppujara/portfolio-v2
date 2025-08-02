@@ -1,6 +1,18 @@
 # Ignore Node dependencies
 node_modules/
 
-# Ignore local secrets
+# Ignore local secrets and environment variables
+# This is the most important part!
+.env*
 .env.local
-.vercel
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore Vercel's local configuration
+.vercel/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
