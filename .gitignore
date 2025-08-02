@@ -1,0 +1,6 @@
+# Ignore Node dependencies
+node_modules/
+
+# Ignore local secrets
+.env.local
+.vercel
