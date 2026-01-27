@@ -1,18 +1,15 @@
 {
-  "name": "ai-update---portfolio",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "deep-pujara-portfolio",
+  "version": "2.2.0",
+  "description": "Professional portfolio for Deep Pujara - Ph.D. Researcher",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": ["portfolio", "deep-learning", "edge-ai", "phd-researcher"],
+  "author": "Deep Pujara",
+  "license": "MIT",
   "dependencies": {
-    "@upstash/redis": "^1.35.3",
-    "@vercel/kv": "^3.0.0",
-    "openai": "^4.20.1",
     "resend": "^3.2.0"
   }
 }

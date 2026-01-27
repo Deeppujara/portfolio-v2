@@ -1,741 +1,1102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Deep Pujara | Portfolio</title>
-  <link rel="icon" href="./assets/profile.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="./css/styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N80KQQCR7S"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Pujara, Ph.D. Researcher - Deep Learning & Edge AI Research | ASU</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Deep Pujara is a Ph.D. researcher in Electrical and Computer Engineering at Arizona State University, specializing in deep learning, edge AI, solar energy systems, and embedded machine learning. 11 IEEE publications, NSF-funded researcher, 2x Skyworks AI intern, conference reviewer, public speaker.">
+    <meta name="keywords" content="Deep Pujara, deep learning, edge AI, embedded machine learning, solar energy systems, PyTorch, TensorFlow, Arizona State University, IEEE, PhD researcher, machine learning engineer">
+    <meta name="author" content="Deep Pujara">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Deep Pujara - Deep Learning & Edge AI Researcher">
+    <meta property="og:description" content="Deep Learning · Edge AI · Solar Energy Systems · 11 IEEE Publications · NSF Researcher">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portfolio-v2-black-zeta.vercel.app">
+    <meta property="og:image" content="./assets/profile.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/profile.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-
-  <div id="tsparticles"></div>
-
-  <header class="navbar">
-    <div class="logo">Deep Pujara</div>
-    <div class="menu-toggle"><div></div><div></div><div></div></div>
-    <nav class="nav-links">
-      <a href="#about" class="nav-link">About</a>
-      <a href="#experience" class="nav-link">Experience</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#education" class="nav-link">Education</a>
-      <a href="#skills" class="nav-link">Skills</a>
-      <a href="#publications" class="nav-link">Publications</a>
-      <a href="#presentations" class="nav-link">Presentations</a>
-      <a href="#recommendations" class="nav-link">Recommendations</a>
-      <a href="#beyond-work" class="nav-link">Beyond Work</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </nav>
-  </header>
-
-
-  
-  <section class="hero section-container" id="about">
-    <div class="hero-left-column">
-        <img src="./assets/profile.png" alt="Deep Pujara" class="profile-image">
-        <div class="profile-info">
-            <h1><span class="wave">👋🏻</span> Hi, I am</h1>
-            <h1 class="name">Deep Pujara</h1>
-            <div class="hero-subtitle">Machine Learning Researcher</div>
-            <div class="role-line">Ph.D Student at <span id="typewriter-company"></span></div>
-            <div class="hero-actions">
-                <a href="./Deep_Pujara_Resume.pdf" class="resume-btn" target="_blank" id="resume-btn">View Resume</a>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/deep07-pujara/" target="_blank" class="social-link" data-platform="LinkedIn"><img src="./assets/linkedin.png" alt="LinkedIn"></a>
-                </div>
+    
+    <!-- Sticky Header Navigation -->
+    <header class="site-header">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <a href="#home" class="nav-logo">Deep Pujara</a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#research" class="nav-link">Research</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#teaching" class="nav-link">Teaching</a></li>
+                    <li><a href="#presentations" class="nav-link">Presentations</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#recommendations" class="nav-link">Recommendations</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-        </div>
-    </div>
-    <div class="chatbot-right-column">
-        <div class="chatbot-container">
-            <div class="chatbot-body" id="chatbot-body">
-                <div class="chatbot-intro" id="chatbot-intro">
-                    <img src="./assets/deepbot-logo.png" alt="DeepBot Logo" class="chatbot-logo">
-                    <h3>Deep-AI</h3>
-                    <p>I'm Deep's AI assistant. Feel free to ask me about his work and background. I'm here to help with any questions you have.</p>
-                    <div class="conversation-starters">
-                         <button class="starter-btn" data-question="What is Deep currently researching?">Deep's Current Research Work</button>
-                        <button class="starter-btn" data-question="Tell me about Deep's education.">Deep's Education</button>
-                        <button class="starter-btn" data-question="What are some of Deep's key research projects?">Deep's Key Research Projects</button>
-                        <button class="starter-btn" data-question="What is Deep currently working on at the Skyworks Solutions?">Deep's Current Work at Skyworks</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Deep Pujara</h1>
+                    <h2 class="hero-subtitle">Ph.D. Researcher in Electrical and Computer Engineering</h2>
+                    <p class="hero-affiliation">Arizona State University | SenSIP Lab</p>
+                    <p class="hero-specialization">Deep Learning · Edge AI · Solar Energy Systems · Embedded ML</p>
+                    
+                    <div class="hero-credentials">
+                        <span class="credential-badge">11 IEEE Publications</span>
+                        <span class="credential-badge">2 Times Skyworks Intern</span>
+                        <span class="credential-badge">NSF Researcher</span>
+                        <span class="credential-badge">Conference Reviewer</span>
+                        <span class="credential-badge">Public Speaker</span>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <a href="./Deep_Pujara_Resume.pdf" class="btn btn-primary" download>Download Resume</a>
+                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    </div>
+                    
+                    <div class="hero-social">
+                        <a href="https://www.linkedin.com/in/deep07-pujara/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="social-link">
+                            <img src="./assets/linkedin.png" alt="LinkedIn" class="social-icon">
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=5-SoP5gAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar Profile" class="social-link">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.webofscience.com/wos/author/record/PAV-3898-2025" target="_blank" rel="noopener noreferrer" aria-label="Web of Science Profile" class="social-link">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm-1 4v8l7 4-1 2-8-4.5V6h2z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/Deeppujara" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="social-link">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div class="chatbot-messages" id="chatbot-messages"></div>
-            </div>
-            <div class="chatbot-input-area" id="chatbot-input-area">
-                <form id="chatbot-form">
-                    <input type="text" id="chatbot-input" placeholder="Ask me anything..." required autocomplete="off">
-                    <button type="submit" id="chatbot-send-btn" aria-label="Send message">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11L12 6L17 11"/><path d="M12 18V6"/></svg>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-  </section>
-
-
-
-  <section class="section-container" id="experience">
-    <h2 class="section-heading">Work Experience</h2>
-        <div class="item-container">
-            <div class="item">
-                <div class="item-dates">Sep 2021 – Present</div>
-                <div class="item-details">
-                    <h3><strong>Graduate Research Associate</strong></h3>
-                    <h4>SenSIP Lab, School of ECEE, Arizona State University, Tempe, AZ, USA</h4>
-                    <ul>
-                        <li>Developed a compact embedded ML algorithm utilizing Pruning, Quantization-Aware Training, and 8-bit Post-Training Quantization for efficient and accurate topology classification in solar energy systems.</li>
-                        <li>Conducted experimental topology reconfiguration research on a 3*3 solar array to optimize power output in solar panels under varying shading conditions, employing both simulation modelling (via Simulink) and practical experiments.</li>
-                        <li>Deployed an optimized Embedded ML algorithm on an Arduino Nano BLE 33 using TensorFlow and TensorFlow Lite Micro Libraries, achieving real-time fault detection with 85.97% test accuracy.</li>
-                        <li>Designed a Monitoring Device Hardware using various sensors and microcontrollers to measure important PV parameters such as Voltage, Current, Temperature, and Irradiance with a better transmission rate (1 second), and high accuracy (above 95%).</li>
-                    </ul>
-                    <div class="item-tags"><span class="tag">Embedded ML</span><span class="tag">Quantization</span><span class="tag">Simulink</span><span class="tag">TensorFlow Lite</span><span class="tag">Arduino</span><span class="tag">Edge Computing</span></div>
+                
+                <div class="hero-image">
+                    <img src="./assets/profile.png" alt="Deep Pujara" class="profile-image">
                 </div>
             </div>
-
-            <div class="item">
-                <div class="item-dates">Aug 2025 – Present</div>
-                <div class="item-details">
-                    <h3><strong>Graduate Teaching Associate (EEE 598 – Deep Learning)</strong></h3>
-                    <h4>School of ECEE, Arizona State University, Tempe, AZ, USA</h4>
-                    <ul>
-                        <li>Leading weekly labs and teaching and grading assignments; covering end-to-end assignments related to DL topics—from perceptron/backprop and MLPs to CNNs, RNNs, Transformers/ViT, GANs/diffusion—using PyTorch on GPU.</li>
-                        <li>Mentor students through full ML workflows (data pipelines/augmentation, training & evaluation loops, hyperparameter tuning, experiment tracking, model interpretability.</li>
-                    </ul>
-                    <div class="item-tags"><span class="tag">Deep Learning</span><span class="tag">PyTorch</span><span class="tag">CNNs</span><span class="tag">RNNs</span><span class="tag">Transformers</span></div>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="item-dates">May 2025 – Aug 2025</div>
-                <div class="item-details">
-                    <h3><strong>AI Speech and Signal Processing Intern</strong></h3>
-                    <h4>Skyworks Solution, Hillsboro, OR, USA</h4>
-                    <ul>
-                        <li>Built a cycle-accurate Python simulator for a systolic array accelerator, parameterized by matrix/array dimensions and dataflows; computed per-layer & end-to-end cycle counts, PE utilization, bandwidth utilization, and auto-recommended trim strategies to reduce stalls and cycles.</li>
-                        <li>Led software-hardware co-design and memory-hierarchy analysis, profiling SRAM/DRAM access patterns, tiling, and on-chip buffer reuse to improve throughput/latency and inform accelerator configuration and performance modelling.</li>
-                        <li>Deployed two noise-separation ML models on Skyworks custom embedded hardware (SoC/ASIC) and executed on-device inference, and instrumented power measurement.</li>
-                    </ul>
-                    <div class="item-tags"><span class="tag">Hardware Co-Design</span><span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">Embedded Systems</span></div>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="item-dates">Jan 2023 – May 2025</div>
-                <div class="item-details">
-                    <h3><strong>Graduate Teaching Associate (EEE 407 – Digital Signal Processing)</strong></h3>
-                    <h4>School of ECEE, Arizona State University, Tempe, AZ, USA</h4>
-                    <ul>
-                        <li>Providing support to students in understanding the concepts of Fast Fourier Transform, Filters, Sampling, and related topics.</li>
-                        <li>Conducting 2-3 interactive live sessions every semester and providing problem-solving support to students, facilitating a practical understanding of the DSP concepts and their real-life applications.</li>
-                    </ul>
-                    <div class="item-tags"><span class="tag">Teaching</span><span class="tag">Digital Signal Processing</span><span class="tag">MATLAB</span></div>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="item-dates">May 2023 – Aug 2023</div>
-                <div class="item-details">
-                    <h3><strong>Broadcast Application Engineering Intern</strong></h3>
-                    <h4>Skyworks Solution, Austin, TX, USA</h4>
-                    <ul>
-                        <li>Engineered an advanced USB to SPI bridge (REV 2.0) using ORCAD, incorporating 4 chip select and reset lines. Optimized MISO, MOSI, and SCK pins, ensuring seamless replacement for Rev 1.0 with improved functionality.</li>
-                        <li>Built driver code in C++ enabling efficient USB-SPI communication, facilitating smooth data transfer with maintained compatibility and enhanced performance compared to REV 1.0.</li>
-                    </ul>
-                    <div class="item-tags"><span class="tag">C++</span><span class="tag">ORCAD</span><span class="tag">Hardware Design</span><span class="tag">USB-SPI Bridge</span></div>
-                </div>
-            </div>
-        </div>
-  </section>
-
-
-
-  <section class="section-container" id="projects">
-    <h2 class="section-heading">Projects</h2>
-    <div class="item-container">
-    <div class="item">
-    <div class="item-dates">June 2025 – July 2025</div>
-    <div class="item-details">
-    <h3>DeepAI: AI Portfolio Assistant</h3>
-    <ul><li>Developed and integrated a conversational AI assistant using the OpenAI Assistants API (GPT-4o) to provide real-time answers about my skills and experience.</li><li>Engineered a secure CI/CD pipeline with GitHub Actions to automate deployment, ensuring API keys were never exposed in the public repository.</li><li>Enabled Retrieval-Augmented Generation (RAG) by providing the model with a knowledge base of my resume and project data for accurate, context-aware responses.</li></ul>
-    <div class="item-tags"><span class="tag">OpenAI API</span><span class="tag">RAG</span><span class="tag">GitHub Actions</span><span class="tag">Secure Deployment</span></div>
-    </div>
-    </div>
-    <div class="item">
-    <div class="item-dates">July 2024 – Sep 2024</div>
-    <div class="item-details">
-    <h3>EdgeVoice: Real-Time Wake Word Detection</h3>
-    <ul><li>Collected and curated a custom speech dataset, preprocessing it with Audacity for noise reduction and normalization.</li><li>Engineered a CNN architecture for low-power devices, utilizing MFCC feature extraction to recognize speech with 78.63% test accuracy.</li><li>Implemented the model on Arduino Nano 33 BLE Sense, enabling efficient real-time voice command processing for edge AI applications.</li></ul>
-    <div class="item-tags"><span class="tag">CNN</span><span class="tag">Wake Word Detection</span><span class="tag">Arduino</span><span class="tag">MFCC</span><span class="tag">TensorFlow Lite</span></div>
-    </div>
-    </div>
-    </div>
-  </section>
-
-
-
-  <section class="section-container" id="education">
-        <h2 class="section-heading">Education</h2>
-        <div class="education-layout">
-        <div class="education-slider">
-        <div class="slider-line"></div>
-        <div class="slider-node" id="node-phd" data-target="edu-phd"><img src="./assets/grad.png" alt="Graduation Cap"></div>
-        <div class="slider-node" id="node-ms" data-target="edu-ms"><img src="./assets/graduation.png" alt="Graduation Cap"></div>
-        <div class="slider-node" id="node-bs" data-target="edu-bs"><img src="./assets/graduation.png" alt="Graduation Cap"></div>
-        </div>
-        <div class="education-content">
-        <div class="education-item" id="edu-phd">
-        <div class="education-logo"><img src="./assets/ASU.png" alt="Arizona State University Logo"></div>
-        <div class="education-details">
-        <h3>Doctor of Philosophy in Electrical Engineering</h3>
-        <p>Jan 2024 – Present (GPA: 3.83/4)</p>
-        <ul>
-        <li>Arizona State University, Tempe, Arizona, USA</li>
-        <li>Specialization: Solar, Signal Processing, and Embedded Machine Learning</li>
-        </ul>
-        </div>
-        </div>
-        <div class="education-item" id="edu-ms">
-        <div class="education-logo"><img src="./assets/ASU.png" alt="Arizona State University Logo"></div>
-        <div class="education-details">
-        <h3>Master of Science in Electrical Engineering</h3>
-        <p>Aug 2021 – Dec 2023 (GPA: 3.82/4)</p>
-        <ul>
-        <li>Arizona State University, Tempe, Arizona, USA</li>
-        <li>Specialization: Solar, Signal Processing, and Machine Learning</li>
-        </ul>
-        </div>
-        </div>
-        <div class="education-item" id="edu-bs">
-        <div class="education-logo"><img src="./assets/Nirma.png" alt="Nirma University Logo"></div>
-        <div class="education-details">
-        <h3>Bachelor of Technology in Electronics and Communication</h3>
-        <p>Aug 2017 – May 2021 (GPA: 8.11/10)</p>
-        <ul>
-        <li>Nirma University, Ahmedabad, Gujarat, India</li>
-        </ul>
-        </div>
-        </div>
-        </div>
         </div>
     </section>
 
-
-
-    <section class="section-container" id="skills">
-        <h2 class="section-heading">Skills</h2>
-        <div class="skills-category">
-        <h3>Programming</h3>
-        <ul class="skills-list">
-            <li id="python-skill-trigger"><div class="skill-content"><img src="./assets/Python.png" alt="Python Logo">Python</div><span class="arrow-indicator"></span></li>
-            <li><div class="skill-content"><img src="./assets/Matlab.png" alt="MATLAB Logo">MATLAB</div></li>
-            <li><div class="skill-content"><img src="./assets/C++.png" alt="C++ Logo">C++</div></li>
-        </ul>
-        </div>
-        <div class="skills-category" id="python-packages-category">
-        <h3>Python Packages</h3>
-        <ul class="skills-list">
-            <li><img src="./assets/Tensorflow.png" alt="TensorFlow Logo">TensorFlow</li><li><img src="./assets/Pytorch.png" alt="PyTorch Logo">PyTorch</li><li><img src="./assets/Numpy.png" alt="NumPy Logo">NumPy</li><li><img src="./assets/Matplotlib.png" alt="Matplotlib Logo">Matplotlib</li><li><img src="./assets/pandas.png" alt="Pandas Logo">Pandas</li><li><img src="./assets/scikit-learn.png" alt="Scikit-Learn Logo">Scikit-Learn</li>
-        </ul>
-        </div>
-        <div class="skills-category">
-        <h3>Software</h3>
-        <ul class="skills-list">
-            <li><img src="./assets/vscode.png" alt="VS Code Logo">VS Code</li><li><img src="./assets/simulink.jpg" alt="Simulink Logo">Simulink</li><li><img src="./assets/git.png" alt="Git Logo">Git</li><li><img src="./assets/latex.png" alt="LaTeX Logo">LaTeX</li><li><img src="./assets/jira.svg" alt="Jira Logo">Jira</li><li><img src="./assets/confluence.png" alt="Confluence Logo">Confluence</li><li><img src="./assets/msoffice.jpg" alt="MS Office Logo">MS Office</li><li><img src="./assets/arduino.png" alt="Arduino IDE Logo">Arduino IDE</li>
-        </ul>
-        </div>
-  </section>
-
-
-
-  <section class="section-container" id="publications">
-    <h2 class="section-heading">Publications</h2>
-    <ul class="publications-list">
-    <li class="publication-item">
-    <div class="publication-title-area">
-    J. Larson, D. Pujara, D. Ramirez, L. Miller, T. Patel, N. Babar, A. Spanias, “WIP: Building a Research Experience for Undergraduates in Quantum Machine Learning” 2024 Frontiers in Education (FIE), Washington DC, USA.
-    </div>
-    <span class="publication-toggle-icon"></span>
-    <div class="publication-details">
-    <div class="publication-details-content">
-    <h4>Abstract</h4>
-    <p>This work in progress research-to-practice study describes the development of a new undergraduate research training site on Quantum Machine Learning (QML), hosted at Arizona State University, a large Hispanic-Serving Institution. The objectives of this project are to a) recruit and prepare students from diverse pathways to increase representation of those traditionally underrepresented in QML research, b) increase awareness of career opportunities in the QML field, c) engage students in theoretical and experimental quantum information processing and machine learning (ML), d) motivate students to continue QML research into graduate school, and e) provide professional development training including presenting to stakeholders, developing publications/patents, and building an awareness on social implications, ethics, and privacy. The project adopts an integrative theory, application, and hands-on training approach by immersing undergraduate students in ML algorithm and quantum computing studies with hands-on quantum circuit design tasks. Participants are embedded in research labs, guided by graduate students and faculty mentors on quantum computing research studies. The program is evaluated by both the Center for Evaluating the Research Pipeline (CERP) and an independent evaluator. Formative and summative assessments include pre- and post-surveys, a mid-point check-in survey, and a document review of program deliverables. Findings are described in a final evaluation report. This paper describes the importance of introducing QML research at the undergraduate level, methods for recruiting a diverse group of participants, program format, research projects, and preliminary program evaluation results.</p>
-    <div class="publication-actions">
-    <a href="https://ieeexplore-ieee-org.ezproxy1.lib.asu.edu/document/10893516" target="_blank" class="action-btn view-link">View on IEEE</a>
-    <button class="action-btn copy-btn" data-citation='J. Larson, et al., “WIP: Building a Research Experience for Undergraduates in Quantum Machine Learning,” 2024 Frontiers in Education (FIE), Washington DC, USA.'>Copy Citation</button>
-    </div>
-    </div>
-    </div>
-    </li>
-    <li class="publication-item">
-    <div class="publication-title-area">
-    D. Ramirez, D. Pujara, C. Tepedelenlioglu, D. Srinivasan and A. Spanias, "Infrared Computer Vision for Utility-Scale Photovoltaic Array Inspection," 2024 15th International Conference on Information, Intelligence, Systems & Applications (IISA), Volos, Greece, 2024.
-    </div>
-    <span class="publication-toggle-icon"></span>
-    <div class="publication-details">
-    <div class="publication-details-content">
-    <h4>Abstract</h4>
-    <p>Utility-scale solar arrays require specialized inspection methods for detecting faulty panels. Photovoltaic (PV) panel faults caused by weather, ground leakage, circuit issues, temperature, environment, age, and other damage can take many forms but often symptomatically exhibit temperature differences. Included is a mini survey to review these common faults and PV array fault detection approaches. Among these, infrared thermography cameras are a powerful tool for improving solar panel inspection in the field. These can be combined with other technologies, including image processing and machine learning. This position paper examines several computer vision algorithms that automate thermal anomaly detection in infrared imagery. We demonstrate our infrared thermography data collection approach, the PV thermal imagery benchmark dataset, and the measured performance of image processing transformations, including the Hough Transform for PV segmentation. The results of this implementation are presented with a discussion of future work.</p>
-    <div class="publication-actions">
-    <a href="https://ieeexplore.ieee.org/document/10786613" target="_blank" class="action-btn view-link">View on IEEE</a>
-    <button class="action-btn copy-btn" data-citation='D. Ramirez, D. Pujara, C. Tepedelenlioglu, D. Srinivasan and A. Spanias, "Infrared Computer Vision for Utility-Scale Photovoltaic Array Inspection," 2024 15th International Conference on Information, Intelligence, Systems & Applications (IISA), Volos, Greece, 2024.'>Copy Citation</button>
-    </div>
-    </div>
-    </div>
-    </li>
-    <li class="publication-item">
-    <div class="publication-title-area">
-    D. Pujara, D. Ramirez, C. Tepedelenlioglu, D. Srinivasan and A. Spanias, "Real-time PV Fault Detection using Embedded Machine Learning," 2024 IEEE 7th International Conference on Industrial Cyber-Physical Systems (ICPS), St. Louis, MO, USA, 2024, pp. 1-5.
-    </div>
-    <span class="publication-toggle-icon"></span>
-    <div class="publication-details">
-    <div class="publication-details-content">
-    <h4>Abstract</h4>
-    <p>Real-time monitoring and control of individual solar panels in a photovoltaic (PV) array can improve efficiency and reduce the probability of hazardous situations. This paper proposes the design and implementation of a real-time Intelligent Monitoring and Control Device (IMCD) to measure PV parameters such as temperature, voltage, current, and irradiance from individual solar panels. The proposed IMCD uses an embedded machine-learning (ML) algorithm for detecting and classifying four key conditions of the solar panel: partial shading, soiling, extreme soiling, and the standard test condition (STC). IMCDs connect with solar panels and with a control center using an integrated data transceiver. The hardware consists of an Arduino UNO transmitter that is used for data collection, an Arduino Nano BLE 33 Sense receiver for PV measurement, and an integrated processor for real-time fault detection using embedded ML. The training of the embedded ML models and their real-world testing and validation are presented in this paper. Comparisons with cloud-based ML algorithms and the use of bagging ensemble techniques to increase fault detection accuracy are also discussed in this paper.</p>
-    <div class="publication-actions">
-    <a href="https://ieeexplore.ieee.org/document/10640018" target="_blank" class="action-btn view-link">View on IEEE</a>
-    <button class="action-btn copy-btn" data-citation='D. Pujara, D. Ramirez, C. Tepedelenlioglu, D. Srinivasan and A. Spanias, "Real-time PV Fault Detection using Embedded Machine Learning," 2024 IEEE 7th International Conference on Industrial Cyber-Physical Systems (ICPS), St. Louis, MO, USA, 2024, pp. 1-5.'>Copy Citation</button>
-    </div>
-    </div>
-    </div>
-    </li>
-    <li class="publication-item">
-    <div class="publication-title-area">
-    W. Chao, A. Sharma, G. Uehara, L. Miller, D. Pujara, W. Barnard, J. Larson, and A. Spanias. "Introducing Quantum Computing in a Sophomore Signals and Systems Course." 2023 IEEE Frontiers in Education Conference (FIE), pp. 1-5. IEEE, 2023.
-    </div>
-    <span class="publication-toggle-icon"></span>
-    <div class="publication-details">
-    <div class="publication-details-content">
-    <h4>Abstract</h4>
-    <p>This Innovative Practice Work in Progress Paper describes the development and assessment of a web-based simulation lab exercise introducing basic quantum computing concepts in a sophomore signals and systems course. Specifically, students make the connection between quantum computing and signals and systems theory through a comparative study of using Quantum Fourier Transforms and Fast Fourier Transforms for a speech analysis-synthesis application. In addition, quantum noise models are introduced and simulated to show their effect on computation performance. Statistics from pre/post quizzes show that there is significant knowledge improvement by completing the lab exercise.</p>
-    <div class="publication-actions">
-    <a href="https://ieeexplore.ieee.org/document/10343312" target="_blank" class="action-btn view-link">View on IEEE</a>
-    <button class="action-btn copy-btn" data-citation='W. Chao, et al., "Introducing Quantum Computing in a Sophomore Signals and Systems Course," 2023 IEEE Frontiers in Education Conference (FIE), pp. 1-5. IEEE, 2023.'>Copy Citation</button>
-    </div>
-    </div>
-    </div>
-    </li>
-    <li class="publication-item">
-    <div class="publication-title-area">
-    D. Pujara, D. Ramirez, C. Tepedelenlioglu, D. Srinivasan and A. Spanias, "Design of a New Photovoltaic Intelligent Monitoring and Control Device," 2023 14th International Conference on Information, Intelligence, Systems & Applications (IISA), Volos, Greece, 2023, pp. 1-4.
-    </div>
-    <span class="publication-toggle-icon"></span>
-    <div class="publication-details">
-    <div class="publication-details-content">
-    <h4>Abstract</h4>
-    <p>Continuous monitoring and fault detection for solar arrays can increase overall power efficiency and prevent hazardous situations. This paper proposes an intelligent monitoring and control device (IMCD) that can measure relevant photovoltaic (PV) parameters such as temperature, voltage, current, and irradiance. Our system design is based on an Arduino microcontroller that acquires and processes data from a PV panel. The design is such that data collected from the PV panels can be transmitted to a networked computer using an integrated Zigbee wireless transceiver. The design has provisions for embedded machine learning (ML) and then cloud-based ML algorithms trained to detect and classify PV faults in real time. The IMCD design can reconfigure the connection topology of a PV array using relays. These relays can switch from series to parallel connection upon command and hence reconfigure the PV connection topology to optimize power output for different shading conditions.</p>
-    <div class="publication-actions">
-    <a href="https://ieeexplore.ieee.org/document/10345864" target="_blank" class="action-btn view-link">View on IEEE</a>
-    <button class="action-btn copy-btn" data-citation='D. Pujara, D. Ramirez, C. Tepedelenlioglu, D. Srinivasan and A. Spanias, "Design of a New Photovoltaic Intelligent Monitoring and Control Device," 2023 14th International Conference on Information, Intelligence, Systems & Applications (IISA), Volos, Greece, 2023, pp. 1-4.'>Copy Citation</button>
-    </div>
-    </div>
-    </div>
-    </li>
-    <li class="publication-item">
-    <div class="publication-title-area">
-    S. Rao, D. Pujara, A. Spanias, C. Tepedelenlioglu and D. Srinivasan, "Real-time Solar Array Data Acquisition and Fault Detection using Neural Networks," 2023 IEEE 6th International Conference on Industrial Cyber-Physical Systems (ICPS), Wuhan, China, 2023, pp. 1-5.
-    </div>
-    <span class="publication-toggle-icon"></span>
-    <div class="publication-details">
-    <div class="publication-details-content">
-    <h4>Abstract</h4>
-    <p>Continuous real-time solar system monitoring for fault detection and classification can improve solar panel efficiency and overall output. In this study, we developed and implemented a real-time PV fault detection system based on machine learning. The system was implemented on an 18kW testbed facility which consists of 104 solar panels located at the ASU Research Park. Each solar panel is connected to a smart monitoring device (SMD) which obtains real-time voltage and current measurements. SMDs are attached to each panel and transmit all the acquired data to a server that is connected to the internet. We implement fault detection using real-time measurements and various neural network architectures. We train and test both fully connected and dropout neural networks with different dropout regularization. We use both a real-time dataset and a synthetic dataset and present comparative results. We train and classify for the following conditions: soiled panels, shaded and degraded panels, and standard test conditions.</p>
-    <div class="publication-actions">
-    <a href="https://ieeexplore.ieee.org/document/10128030" target="_blank" class="action-btn view-link">View on IEEE</a>
-    <button class="action-btn copy-btn" data-citation='S. Rao, D. Pujara, A. Spanias, C. Tepedelenlioglu and D. Srinivasan, "Real-time Solar Array Data Acquisition and Fault Detection using Neural Networks," 2023 IEEE 6th International Conference on Industrial Cyber-Physical Systems (ICPS), Wuhan, China, 2023, pp. 1-5.'>Copy Citation</button>
-    </div>
-    </div>
-    </div>
-    </li>
-    <li class="publication-item">
-    <div class="publication-title-area">
-    D. Pujara, P. Patel and S. Gajjar, "Geo Tracking of Waste, Triggering Alerts and Mapping Areas with High Waste Index," 2020 IEEE 17th India Council International Conference (INDICON), New Delhi, India, 2020, pp. 1-5.
-    </div>
-    <span class="publication-toggle-icon"></span>
-    <div class="publication-details">
-    <div class="publication-details-content">
-    <h4>Abstract</h4>
-    <p>This paper aims to improve the efficiency of the garbage collection process by developing a system for monitoring waste levels in garbage bins using ultrasonic sensors and connecting them to Arduino Uno board for sending the measurements like the amount of waste level to the user. Two smart dustbins were designed for home use and public use which are monitored in real-time using the mobile applications. Notification alerts are also sent when the amount of waste exceeds a certain threshold level. These dustbins are connected wirelessly using a Zigbee based transceiver in the form of a mesh network to facilitate the transfer of the amount of waste present in these dustbins to the nearest garbage collection truck and an optimized shortest route to be followed by the garbage collector truck is calculated. The proposed system is user friendly, compact and cost-effective requiring minimum human intervention.</p>
-    <div class="publication-actions">
-    <a href="https://ieeexplore.ieee.org/document/9342100" target="_blank" class="action-btn view-link">View on IEEE</a>
-    <button class="action-btn copy-btn" data-citation='D. Pujara, P. Patel and S. Gajjar, "Geo Tracking of Waste, Triggering Alerts and Mapping Areas with High Waste Index," 2020 IEEE 17th India Council International Conference (INDICON), New Delhi, India, 2020, pp. 1-5.'>Copy Citation</button>
-    </div>
-    </div>
-    </div>
-    </li>
-    <li class="publication-item">
-    <div class="publication-title-area">
-    D. Pujara, P. Kukreja and S. Gajjar, "Design and Development of E-Sense: IoT based Environment Monitoring System," 2020 IEEE Students Conference on Engineering & Systems (SCES), Prayagraj, India, 2020, pp. 1-5.
-    </div>
-    <span class="publication-toggle-icon"></span>
-    <div class="publication-details">
-    <div class="publication-details-content">
-    <h4>Abstract</h4>
-    <p>Environment monitoring and control has become a vital part of present-day to control air pollution and help in agriculture, fishery, shipping and military operations. Environment monitoring using traditional manually operated Weather Monitoring Stations requires skilled technicians for operation, is not scalable, and demands human intervention, which increases the cost of the Weather Monitoring Station. To address these issues, authors have attempted to design and develop E-Sense, an Internet of Things based environment monitoring system. E-Sense measures important environment parameters like temperature, humidity, air quality index, CO concentrations, rain and light. The data collected from the sensors is transmitted to ThingSpeak using the ESP8266 Wi-Fi module. The ThingSpeak helps in analyzing the data and present it in graphical and tabular forms. Additionally, E-Sense creates a heat map of the monitored area. A testbed implementation and experimentation show that the system works without human intervention, is user friendly, compact, and is cost-efficient.</p>
-    <div class="publication-actions">
-    <a href="https://ieeexplore.ieee.org/document/9236768" target="_blank" class="action-btn view-link">View on IEEE</a>
-    <button class="action-btn copy-btn" data-citation='D. Pujara, P. Kukreja and S. Gajjar, "Design and Development of E-Sense: IoT based Environment Monitoring System," 2020 IEEE Students Conference on Engineering & Systems (SCES), Prayagraj, India, 2020, pp. 1-5.'>Copy Citation</button>
-    </div>
-    </div>
-    </div>
-    </li>
-    </ul>
-  </section>
-
-  <section class="section-container" id="presentations">
-    <h2 class="section-heading">Talks & Presentations</h2>
-    <div class="presentations-grid">
-        <a href="https://www.linkedin.com/posts/deep07-pujara_embeddedml-edgeai-systolicarray-activity-7363316337781194752-ZhAo?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card"><img src="./assets/presentation0.jpeg" alt="AI Internship at Skyworks Solutions" class="presentation-image"><div class="presentation-content"><h3>Summer 2025 Internship at Skyworks Solutions</h3><div class="presentation-date">August 2025 | Skyworks, Hillsboro, Oregon</div><p class="presentation-description">Built a cycle-accurate Python simulator for systolic array accelerator, parameterized by matrix/array dimensions and dataflows; computed per-layer & end-to-end cycle counts, PE utilization, and bandwidth utilization.</p></div><div class="presentation-footer"><span class="linkedin-link">View on LinkedIn →</span></div></a>
-        <a href="https://sensip.engineering.asu.edu/nsf-mri-solar/" target="_blank" class="presentation-card"><img src="./assets/presentation1.jpg" alt="Presentation at SenSIP Industry Consortium 2025" class="presentation-image"><div class="presentation-content"><h3>PV Fault Detection & Topology Optimization</h3><div class="presentation-date">June 2025 | SenSIP Industry Consortium</div><p class="presentation-description">Presented my research work on real-time PV fault detection and topology optimization with embedded ML at the 2025 SenSIP Industry Consortium, ASU.</p></div><div class="presentation-footer"><span class="linkedin-link">View Project Information →</span></div></a>
-        <a href="https://www.linkedin.com/posts/deep07-pujara_solarenergy-researchinaction-asu-activity-7338345300870213632-5NKg?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card"><img src="./assets/presentation2.jpg" alt="Presentation to REU and RET Programs" class="presentation-image"><div class="presentation-content"><h3>Applied Solar Energy Research</h3><div class="presentation-date">June 2025 | REU & RET Programs @ SenSIP ASU</div><p class="presentation-description">Shared the practical side of my Ph.D. research with REUs and RETs at the ASU Research Park's SenSIP solar facility.</p></div><div class="presentation-footer"><span class="linkedin-link">View on LinkedIn →</span></div></a>
-        <a href="https://www.linkedin.com/posts/deep07-pujara_peerreview-solarenergy-machinelearning-activity-7333282837422292994-zu0b?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card"><img src="./assets/presentation3.jpg" alt="Solar Energy Journal Reviewer" class="presentation-image"><div class="presentation-content"><h3>Beginning of the Research Paper Review Journey</h3><div class="presentation-date">June 2025 | Solar Energy Journal (Elsevier)</div><p class="presentation-description">Started reviewing research papers in my field, beginning with a manuscript in Solar Energy and Machine Learning from the reputed journal Solar Energy (Elsevier).</p></div><div class="presentation-footer"><span class="linkedin-link">View on LinkedIn →</span></div></a>
-        <a href="https://www.linkedin.com/posts/deep07-pujara_embeddedml-solarenergy-pvsystems-activity-7323833832770523136-3leL?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card"><img src="./assets/presentation4.jpg" alt="Presentation at UKIM–ASU Student Workshop" class="presentation-image"><div class="presentation-content"><h3>Topology Reconfiguration with Embedded ML</h3><div class="presentation-date">May 2025 | UKIM–ASU Student Workshop</div><p class="presentation-description">Presented my research work on topology reconfiguration under partial shading at a collaborative workshop with Ss. Cyril and Methodius University, Skopje, Macedonia.</p></div><div class="presentation-footer"><span class="linkedin-link">View on LinkedIn →</span></div></a>
-        <a href="https://www.linkedin.com/posts/deep07-pujara_reu-reu2025-nsf-activity-7321584721031794688-jlPR?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card"><img src="./assets/presentation5.jpg" alt="Presentation at CISE REU PI Workshop 2025" class="presentation-image"><div class="presentation-content"><h3>Enhancing REU Experience</h3><div class="presentation-date">April 2025 | CISE REU PI Workshop</div><p class="presentation-description">Represented the ASU-SenSIP REU site to discuss strategies for REU student engagement and pathways to graduate studies.</p></div><div class="presentation-footer"><span class="linkedin-link">View on LinkedIn →</span></div></a>
-        <a href="https://www.linkedin.com/posts/deep07-pujara_sensipcertificate-asu-machinelearning-activity-7279613013509201920-zamY?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card"><img src="./assets/presentation6.jpg" alt="SenSIP Certificate" class="presentation-image"><div class="presentation-content"><h3>SenSIP Certificate</h3><div class="presentation-date">December 2024 | SenSIP Lab @ ASU </div><p class="presentation-description">Received the ASU-SenSIP Certificate from my professor Dr. Andreas Spanias at the Arizona State University for my work and learning in the field of Sensor, Signal, and Information Processing.</p></div><div class="presentation-footer"><span class="linkedin-link">View on LinkedIn →</span></div></a>
-        <a href="https://www.linkedin.com/posts/asu-sensip_quantum-quantum-activity-7241162273614917632-vNmf?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card"><img src="./assets/presentation7.jpg" alt="Presentation to Tecnológico de Monterrey Delegation" class="presentation-image"><div class="presentation-content"><h3>Embedded ML for Solar Monitoring</h3><div class="presentation-date">November 2024 | ITESM Delegation Visit</div><p class="presentation-description">Demonstrated our custom hardware and embedded ML research for solar monitoring to visiting professors from Tecnológico de Monterrey.</p></div><div class="presentation-footer"><span class="linkedin-link">View on LinkedIn →</span></div></a>
-        <a href="https://www.linkedin.com/posts/deep07-pujara_research-embeddedmachinelearning-ieeeconference-activity-7196295342974205953-NnG5?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card"><img src="./assets/presentation8.jpg" alt="Presentation at the IEEE ICPS Conference 2024" class="presentation-image"><div class="presentation-content"><h3>Real-time PV Fault Detection</h3><div class="presentation-date">May 2024 | IEEE ICPS Conference 2024</div><p class="presentation-description">Presented research on using embedded machine learning for real-time fault detection in photovoltaic systems at SenSIP Industry Consortium 2024.</p></div><div class="presentation-footer"><span class="linkedin-link">View on LinkedIn →</span></div></a>
-        <a href="https://www.linkedin.com/posts/deep07-pujara_renewableenergy-azsec2024-activity-7182531084457316352-XmIG?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card"><img src="./assets/presentation9.jpg" alt="Presentation at Arizona Student Energy Conference 2024" class="presentation-image"><div class="presentation-content"><h3>Real-time PV Fault Detection</h3><div class="presentation-date">March 2024 | Arizona Student Energy Conference</div><p class="presentation-description">Shared work on applying embedded ML for the immediate detection of faults in solar panels at the Arizona Student Energy Conference 2024.</p></div><div class="presentation-footer"><span class="linkedin-link">View on LinkedIn →</span></div></a>
-        <a href="https://www.linkedin.com/posts/deep07-pujara_summerinternship-learningandgrowing-skyworkssolutions-activity-7096983854233628672-z1P8?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card"><img src="./assets/presentation10.jpg" alt="Internship at Skyworks Solutions" class="presentation-image"><div class="presentation-content"><h3>Summer 2023 Internship at Skyworks Solutions</h3><div class="presentation-date">May 2023 | Skyworks, Austin, Texas</div><p class="presentation-description">Engineered and presented a custom PCB and C++ driver solution for USB to SPI bridge board during my summer internship at Skyworks Solutions.</p></div><div class="presentation-footer"><span class="linkedin-link">View on LinkedIn →</span></div></a>
-        <a href="https://www.linkedin.com/posts/deep07-pujara_i-am-pleased-to-share-that-i-recently-gave-activity-7052442210000138240-0SVt?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card"><img src="./assets/presentation11.jpg" alt="Presentation at SenSIP Industry Consortium 2023" class="presentation-image"><div class="presentation-content"><h3>Photovoltaic Monitoring Device implementation</h3><div class="presentation-date">May 2023 | SenSIP Industry Consortium</div><p class="presentation-description">Outlined the design and implementation of a the photovoltaic monitoring device at the annual SenSIP Industry Consortium 2023.</p></div><div class="presentation-footer"><span class="linkedin-link">View on LinkedIn →</span></div></a>
-        <a href="https://www.linkedin.com/posts/deep07-pujara_renewchallenge-azsec2023-rsearch-activity-7053400043441057792-rSKF?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card"><img src="./assets/presentation12.jpg" alt="Presentation at Arizona Student Energy Conference 2023" class="presentation-image"><div class="presentation-content"><h3>A New Intelligent PV Monitoring Device</h3><div class="presentation-date">February 2023 | Arizona Student Energy Conference</div><p class="presentation-description">Presented the design of a new intelligent device for monitoring and controlling photovoltaic systems to optimize energy output.</p></div><div class="presentation-footer"><span class="linkedin-link">View on LinkedIn →</span></div></a>
-        <a href="https://www.linkedin.com/posts/deep07-pujara_sensip-python-learning-activity-6949257007589715968-fbRb?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card"><img src="./assets/presentation13.jpg" alt="Mentoring for RET Program" class="presentation-image"><div class="presentation-content"><h3>Mentoring for Research Experience for Teachers</h3><div class="presentation-date">July 2022 | RET Program @ SenSIP ASU</div><p class="presentation-description">Mentored K-12 teachers in the basics of MATLAB, Python, and Machine Learning as part of the NSF-funded RET program.</p></div><div class="presentation-footer"><span class="linkedin-link">View on LinkedIn →</span></div></a>
-        <a href="https://www.linkedin.com/posts/deep07-pujara_opportunity-python-connections-activity-6934584400185622528-lUOt?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card"><img src="./assets/presentation14.jpg" alt="Mentoring for REU/IRES Programs" class="presentation-image"><div class="presentation-content"><h3>Mentoring for REU & IRES Programs</h3><div class="presentation-date">June 2022 | REU & IRES Programs @ SenSIP ASU</div><p class="presentation-description">Guided undergraduate students in the REU and IRES programs through the fundamentals of MATLAB and Python for their research projects.</p></div><div class="presentation-footer"><span class="linkedin-link">View on LinkedIn →</span></div></a>
-    </div>
-  </section>
-
-  <section class="section-container" id="recommendations">
-    <h2 class="section-heading">Recommendations</h2>
-    <div class="recommendations-container">
-      <div class="recommendation-track">
-
-        <div class="recommendation-card">
-          <div class="recommendation-header">
-            <div class="recommender-name">
-              Diego Reyes
-              <div class="recommender-title">Sr Computer Science Student, ASU</div>
+    <!-- Research & Publications Section -->
+    <section id="research" class="section research-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Research & Publications</h2>
+                <p class="section-subtitle">Advancing deep learning and edge AI for intelligent embedded systems</p>
             </div>
-            <img class="recommender-logo" src="./assets/ASU.png" alt="ASU logo">
-          </div>
-          <p>"During my time as an undergraduate research intern at ASU-SenSIP, Deep Pujara was my mentor for a project in machine learning. He provided me with a solid foundation in classical machine learning, sharing his knowledge and expertise to help me quickly get up to speed on the background research. His leadership and technical guidance created a highly productive and collaborative environment. I am pleased to recommend Deep for his professionalism and dedication to fostering the growth of his mentees."</p>
-        </div>
-        
-        <div class="recommendation-card">
-          <div class="recommendation-header">
-            <div class="recommender-name">
-              Alexander Kain
-              <div class="recommender-title">Sr Principal AI Sys Engineer, Skyworks</div>
+            
+            <!-- Research Impact Metrics -->
+            <div class="impact-metrics">
+                <div class="metric-card">
+                    <div class="metric-number">11*</div>
+                    <div class="metric-label">Peer-Reviewed</div>
+                    <div class="metric-detail">IEEE Publications</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">4+</div>
+                    <div class="metric-label">Years Research</div>
+                    <div class="metric-detail">Graduate Level</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">20+</div>
+                    <div class="metric-label">Presentations</div>
+                    <div class="metric-detail">International</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">2</div>
+                    <div class="metric-label">Peer Reviewer</div>
+                    <div class="metric-detail">IEEE & Elsevier</div>
+                </div>
             </div>
-            <img class="recommender-logo" src="./assets/skyworks_logo.png" alt="Skyworks logo">
-          </div>
-          <p>"I found Deep to be an excellent team player, self-starter, great communicator of ideas, and precise scientific thinker about and quick implementer of highly complex ideas. He has made extremely valuable contributions to our team. I highly recommend him!"</p>
-        </div>
+            
+            <!-- Featured Publications -->
+            <div class="publications-list">
+                <h3 class="subsection-title">Featured Publications</h3>
+                
+                <div class="publication-item featured">
+                    <div class="pub-header">
+                        <h4 class="pub-title">Real-time PV Fault Detection using Embedded Machine Learning</h4>
+                        <span class="pub-venue">IEEE ICPS 2024</span>
+                    </div>
+                    <p class="pub-authors">D. Pujara, D. Ramirez, C. Tepedelenlioglu, D. Srinivasan, A. Spanias</p>
+                    <p class="pub-conference">2024 IEEE 7th International Conference on Industrial Cyber-Physical Systems (ICPS)</p>
+                    <div class="pub-highlight">
+                        <strong>Key Innovation:</strong> Introduced bootstrap aggregation (bagging) technique for an embedded ML model on Arduino Nano, achieving 85.97% test accuracy for real-time solar fault detection. The approach enables continuous monitoring and classification across four fault conditions directly on resource-constrained hardware.
+                    </div>
+                    <a href="https://ieeexplore.ieee.org/document/10640018" target="_blank" class="pub-link">View Publication →</a>
+                </div>
 
-        <div class="recommendation-card">
-          <div class="recommendation-header">
-            <div class="recommender-name">
-              Jay Gupta
-              <div class="recommender-title">Sr Antenna Engineer, Intel</div>
+                <div class="publication-item">
+                    <div class="pub-header">
+                        <h4 class="pub-title">Infrared Computer Vision for Utility-Scale Photovoltaic Array Inspection</h4>
+                        <span class="pub-venue">IEEE IISA 2024</span>
+                    </div>
+                    <p class="pub-authors">D. Ramirez, D. Pujara, C. Tepedelenlioglu, D. Srinivasan, A. Spanias</p>
+                    <p class="pub-conference">2024 15th International Conference on Information, Intelligence, Systems & Applications (IISA)</p>
+                    <div class="pub-highlight">
+                        <strong>Key Innovation:</strong> Developed a computer vision system for automated thermal inspection of utility-scale solar arrays, enabling efficient fault identification through infrared imaging analysis.
+                    </div>
+                    <a href="https://ieeexplore.ieee.org/document/10786613" target="_blank" class="pub-link">View Publication →</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-header">
+                        <h4 class="pub-title">WIP: Building a Research Experience for Undergraduates in Quantum Machine Learning</h4>
+                        <span class="pub-venue">IEEE FIE 2024</span>
+                    </div>
+                    <p class="pub-authors">J. Larson, D. Pujara, D. Ramirez, L. Miller, T. Patel, N. Babar, A. Spanias</p>
+                    <p class="pub-conference">2024 Frontiers in Education (FIE)</p>
+                    <div class="pub-highlight">
+                        <strong>Key Innovation:</strong> Established a structured REU program framework integrating quantum computing concepts with machine learning, providing undergraduate students with hands-on quantum algorithm development experience.
+                    </div>
+                    <a href="https://ieeexplore.ieee.org/document/10893516" target="_blank" class="pub-link">View Publication →</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-header">
+                        <h4 class="pub-title">Design of a New Photovoltaic Intelligent Monitoring and Control Device</h4>
+                        <span class="pub-venue">IEEE IISA 2023</span>
+                    </div>
+                    <p class="pub-authors">D. Pujara, D. Ramirez, C. Tepedelenlioglu, D. Srinivasan, A. Spanias</p>
+                    <p class="pub-conference">2023 14th International Conference on Information, Intelligence, Systems & Applications (IISA)</p>
+                    <div class="pub-highlight">
+                        <strong>Key Innovation:</strong> Designed a comprehensive hardware prototype integrating voltage, current, temperature, and irradiance sensors with 1-second data transmission capability for continuous PV system monitoring.
+                    </div>
+                    <a href="https://ieeexplore.ieee.org/document/10345864" target="_blank" class="pub-link">View Publication →</a>
+                </div>
+                
+                <!-- View All Publications Button -->
+                <div class="view-all-publications-wrapper">
+                    <button id="viewAllPublicationsBtn" class="btn btn-secondary view-all-btn">View All Publications (11 total)</button>
+                </div>
+                
+                <!-- Hidden publications container -->
+                <div id="allPublicationsContainer" class="all-publications-container" style="display: none;">
+                    
+                    <div class="publication-item">
+                        <div class="pub-header">
+                            <h4 class="pub-title">Real-time Solar Array Data Acquisition and Fault Detection using Neural Networks</h4>
+                            <span class="pub-venue">IEEE ICPS 2023</span>
+                        </div>
+                        <p class="pub-authors">S. Rao, D. Pujara, A. Spanias, C. Tepedelenlioglu, D. Srinivasan</p>
+                        <p class="pub-conference">2023 IEEE 6th International Conference on Industrial Cyber-Physical Systems (ICPS)</p>
+                        <div class="pub-highlight">
+                            <strong>Key Innovation:</strong> Implemented neural network-based real-time data acquisition system for solar array monitoring, achieving automated fault detection through continuous analysis of electrical parameters.
+                        </div>
+                        <a href="https://ieeexplore.ieee.org/document/10128030" target="_blank" class="pub-link">View Publication →</a>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="pub-header">
+                            <h4 class="pub-title">Introducing Quantum Computing in a Sophomore Signals and Systems Course</h4>
+                            <span class="pub-venue">IEEE FIE 2023</span>
+                        </div>
+                        <p class="pub-authors">W. Chao, A. Sharma, G. Uehara, L. Miller, D. Pujara, W. Barnard, J. Larson, A. Spanias</p>
+                        <p class="pub-conference">2023 IEEE Frontiers in Education Conference (FIE)</p>
+                        <div class="pub-highlight">
+                            <strong>Key Innovation:</strong> Developed pedagogical approach for integrating quantum computing fundamentals into undergraduate signal processing curriculum, bridging classical and quantum signal analysis concepts.
+                        </div>
+                        <a href="https://ieeexplore.ieee.org/document/10343312" target="_blank" class="pub-link">View Publication →</a>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="pub-header">
+                            <h4 class="pub-title">Geo Tracking of Waste, Triggering Alerts and Mapping Areas with High Waste Index</h4>
+                            <span class="pub-venue">IEEE INDICON 2020</span>
+                        </div>
+                        <p class="pub-authors">D. Pujara, P. Patel, S. Gajjar</p>
+                        <p class="pub-conference">2020 IEEE 17th India Council International Conference (INDICON)</p>
+                        <div class="pub-highlight">
+                            <strong>Key Innovation:</strong> Created IoT-based waste management system with GPS tracking and automated alert mechanisms, enabling data-driven identification of high-waste accumulation zones.
+                        </div>
+                        <a href="https://ieeexplore.ieee.org/document/9342100" target="_blank" class="pub-link">View Publication →</a>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="pub-header">
+                            <h4 class="pub-title">Design and Development of E-Sense: IoT based Environment Monitoring System</h4>
+                            <span class="pub-venue">IEEE SCES 2020</span>
+                        </div>
+                        <p class="pub-authors">D. Pujara, P. Kukreja, S. Gajjar</p>
+                        <p class="pub-conference">2020 IEEE Students Conference on Engineering & Systems (SCES)</p>
+                        <div class="pub-highlight">
+                            <strong>Key Innovation:</strong> Developed comprehensive IoT platform for multi-parameter environmental monitoring, integrating sensor networks with cloud-based data visualization and analysis capabilities.
+                        </div>
+                        <a href="https://ieeexplore.ieee.org/document/9236768" target="_blank" class="pub-link">View Publication →</a>
+                    </div>
+
+                    <h4 class="subsection-title" style="margin-top: 2rem;">Submitted/In Progress</h4>
+
+                    <div class="publication-item">
+                        <div class="pub-header">
+                            <h4 class="pub-title">Training Students for Research with Quantum AI Simulation Tools</h4>
+                            <span class="pub-venue">IEEE ICASSP 2026</span>
+                        </div>
+                        <p class="pub-authors">T. K. Patel, N. A. Babar, D. Pujara, G. Uehara, J. Larson, A. Spanias</p>
+                        <p class="pub-conference">2026 IEEE Int. Conf. Acoustics, Speech and Signal Processing (ICASSP) - Submitted</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="pub-header">
+                            <h4 class="pub-title">Real-Time Photovoltaic Array Topology Optimization Using Embedded Machine Learning</h4>
+                            <span class="pub-venue">IEEE Access</span>
+                        </div>
+                        <p class="pub-authors">D. Pujara, C. Tepedelenlioglu, D. Srinivasan, A. Spanias</p>
+                        <p class="pub-conference">Submitted</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="pub-header">
+                            <h4 class="pub-title">Global Horizontal Irradiance Forecasting for Photovoltaic Systems</h4>
+                            <span class="pub-venue">IEEE Cyber-Physical Systems (ICPS)</span>
+                        </div>
+                        <p class="pub-authors">S. Katoch, D. Pujara, D. Ramirez, P. Turaga, C. Tepedelenlioglu, D. Srinivasan, A. Spanias</p>
+                        <p class="pub-conference">In Progress</p>
+                    </div>
+                </div>
+
+                <!-- Conference Review Service - Highlighted Section -->
+                <div class="conference-review-section">
+                    <h3 class="subsection-title conference-review-title">Conference Review Service</h3>
+                    <div class="review-grid">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <img src="./assets/solar-energy.jpg" alt="Solar Energy Journal" class="review-icon">
+                                <div>
+                                    <h4 class="review-journal">Solar Energy Journal</h4>
+                                    <p class="review-publisher">Elsevier</p>
+                                </div>
+                            </div>
+                            <p class="review-role"><strong>Role:</strong> Manuscript Reviewer</p>
+                            <p class="review-org">Solar Energy and Machine Learning</p>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="review-header">
+                                <img src="./assets/ieee-access.png" alt="IEEE Access" class="review-icon">
+                                <div>
+                                    <h4 class="review-journal">IEEE Access</h4>
+                                    <p class="review-publisher">IEEE</p>
+                                </div>
+                            </div>
+                            <p class="review-role"><strong>Role:</strong> Manuscript Reviewer</p>
+                            <p class="review-org">Machine Learning and Signal Processing</p>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="review-header">
+                                <img src="./assets/ieee-transactions.png" alt="IEEE Transactions" class="review-icon">
+                                <div>
+                                    <h4 class="review-journal">IEEE Transactions on Energy Conversion</h4>
+                                    <p class="review-publisher">IEEE</p>
+                                </div>
+                            </div>
+                            <p class="review-role"><strong>Role:</strong> Manuscript Reviewer</p>
+                            <p class="review-org">Power Systems and Energy Conversion</p>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="review-header">
+                                <img src="./assets/ieee-fie.png" alt="IEEE FIE" class="review-icon">
+                                <div>
+                                    <h4 class="review-journal">IEEE Frontiers in Education (FIE) 2025</h4>
+                                    <p class="review-publisher">IEEE</p>
+                                </div>
+                            </div>
+                            <p class="review-role"><strong>Role:</strong> Conference Reviewer</p>
+                            <p class="review-org">Engineering Education Research</p>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="review-header">
+                                <img src="./assets/ieee.png" alt="IEEE AIMV" class="review-icon">
+                                <div>
+                                    <h4 class="review-journal">IEEE AIMV 2025</h4>
+                                    <p class="review-publisher">IEEE</p>
+                                </div>
+                            </div>
+                            <p class="review-role"><strong>Role:</strong> Conference Reviewer</p>
+                            <p class="review-org">Artificial Intelligence and Machine Vision</p>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
-            <img class="recommender-logo" src="./assets/Intel_logo.svg" alt="Intel logo">
-          </div>
-          <p>"During bachelor's program, Deep worked under my guidance for several projects, specifically in the domain of EM & antennas. I found him dedicated and sincere towards the work. I have noticed a good quality of proactiveness while working with him in collaboration. He always try to see the problem as a big picture and apply planned approach for the successful closure. I wish him a great success and happy to recommend his name for any future references."</p>
         </div>
+    </section>
 
-        <div class="recommendation-card">
-          <div class="recommendation-header">
-            <div class="recommender-name">
-              Dr. Sachin Gajjar
-              <div class="recommender-title">Assoc Professor, NIRMA University</div>
+    <!-- Experience Section -->
+    <section id="experience" class="section experience-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-subtitle">Industry and academic research positions</p>
             </div>
-            <img class="recommender-logo" src="./assets/Nirma.png" alt="Intel logo">
-          </div>
-          <p>"My interaction with Deep has been during his BTech study at Nirma University. He did a number of academic projects with me. During the project work, Deep demonstrated the ability to work independently with great creativity and enthusiasm. Deep is well organized, diligent, and a fast learner. He is one of the most dedicated student that I’ve worked with and is always willing to put extra efforts in all of the work assigned to him. I wish him success for all his endeavors."</p>
-        </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan 2024 – Present</div>
+                    <div class="timeline-content">
+                        <h3 class="role-title">Graduate Research Associate - Ph.D. Research</h3>
+                        <h4 class="company-name">SenSIP Lab, Arizona State University</h4>
+                        <p class="location">Tempe, Arizona, USA</p>
+                        <ul class="achievements">
+                            <li><strong>Designing a transformer-based embedded ML architecture</strong> for real-time PV fault detection optimized for resource-constrained embedded devices using image-based datasets.</li>
+                            <li><strong>Conducted topology reconfiguration research</strong> on 3×3 solar array to optimize power output under varying shading conditions.</li>
+                            <li><strong>Developed compact embedded ML algorithm</strong> utilizing pruning, quantization-aware training, and 8-bit post-training quantization for efficient topology classification.</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">Embedded ML</span>
+                            <span class="tech-tag">Model Compression</span>
+                            <span class="tech-tag">Edge AI</span>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="recommendation-card">
-          <div class="recommendation-header">
-            <div class="recommender-name">
-              Dhruv Shah
-              <div class="recommender-title">Backend Developer, IBM</div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Sep 2021 – Dec 2023</div>
+                    <div class="timeline-content">
+                        <h3 class="role-title">Graduate Research Associate - Master's Research</h3>
+                        <h4 class="company-name">SenSIP Lab, Arizona State University</h4>
+                        <p class="location">Tempe, Arizona, USA</p>
+                        <ul class="achievements">
+                            <li><strong>Deployed optimized embedded ML algorithm</strong> on Arduino Nano BLE 33 using TensorFlow and TensorFlow Lite Micro, achieving 86% test accuracy for real-time solar fault detection.</li>
+                            <li><strong>Designed monitoring device hardware</strong> integrating voltage, current, temperature, and irradiance sensors with 1-second transmission rate and high data accuracy.</li>
+                            <li><strong>Reduced ML model size by 87%</strong> through advanced compression while maintaining real-time performance on edge devices.</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">TensorFlow Lite</span>
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">Model Quantization</span>
+                            <span class="tech-tag">IoT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">May 2025 – Aug 2025</div>
+                    <div class="timeline-content">
+                        <h3 class="role-title">AI Speech and Signal Processing Intern</h3>
+                        <h4 class="company-name">Skyworks Solutions</h4>
+                        <p class="location">Hillsboro, Oregon, USA</p>
+                        <ul class="achievements">
+                            <li><strong>Built cycle-accurate Python simulator</strong> for systolic array accelerator with parameterizable matrix dimensions and dataflow configurations.</li>
+                            <li><strong>Led software-hardware co-design</strong> conducting memory hierarchy analysis, profiling SRAM/DRAM access patterns, and optimizing tiling strategies.</li>
+                            <li><strong>Deployed multiple audio noise-separation ML models</strong> on Skyworks custom embedded hardware (SoC/ASIC) with detailed power measurement analysis.</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Hardware Co-Design</span>
+                            <span class="tech-tag">Systolic Arrays</span>
+                            <span class="tech-tag">Performance Modeling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">May 2023 – Aug 2023</div>
+                    <div class="timeline-content">
+                        <h3 class="role-title">Broadcast Application Engineering Intern</h3>
+                        <h4 class="company-name">Skyworks Solutions</h4>
+                        <p class="location">Austin, Texas, USA</p>
+                        <ul class="achievements">
+                            <li><strong>Engineered USB to SPI bridge hardware (Rev 2.0)</strong> using OrCAD with 4 chip select and reset lines, ensuring backward compatibility.</li>
+                            <li><strong>Built driver code in C++</strong> enabling efficient USB-SPI communication with enhanced performance compared to Rev 1.0.</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">OrCAD</span>
+                            <span class="tech-tag">Hardware Design</span>
+                            <span class="tech-tag">USB-SPI Protocol</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <img class="recommender-logo" src="./assets/ibm.png" alt="Intel logo">
-          </div>
-          <p>"Deep is knowledgeable, articulate, and innovative person to work with. I have known him for quite a time during our educational journey and being a colleague and friend of him, he is someone I trusted and always looked forward to work with him. I have seen him closely working on different projects and have always analyzed his ability to bring integrity, innovation and intelligence to his work and also his managing skills. I believe his overall presence positively impacted the work and the people around him. I am very much sure that he will be an asset for any organization he will work with."</p>
         </div>
+    </section>
 
-        <div class="recommendation-card">
-          <div class="recommendation-header">
-            <div class="recommender-name">
-              Praveen Kukreja
-              <div class="recommender-title">Sr Software Engineer, Crest Data</div>
+    <!-- Teaching Section -->
+    <section id="teaching" class="section teaching-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Teaching & Mentorship</h2>
+                <p class="section-subtitle">Educating the next generation of engineers</p>
             </div>
-            <img class="recommender-logo" src="./assets/crest.webp" alt="Intel logo">
-          </div>
-          <p>"Deep is one of the strongest technologist I have worked with. He has a quick grasping power, excellent deep dive and troubleshooting ability.He is a fast learner and even as an undergraduate student he was involved in some really challenging and innovative projects related to communications and programming. His enthusiasm is contagious. It was a pleasure to work with him and brainstorm any new idea."</p>
-        </div>
-
-        <div class="recommendation-card">
-          <div class="recommendation-header">
-            <div class="recommender-name">
-              Diego Reyes
-              <div class="recommender-title">Sr Computer Science Student, ASU</div>
+            
+            <!-- Teaching Stats -->
+            <div class="teaching-stats">
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Students Supported</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Undergraduate Researchers Mentored</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
             </div>
-            <img class="recommender-logo" src="./assets/ASU.png" alt="ASU logo">
-          </div>
-          <p>"During my time as an undergraduate research intern at ASU-SenSIP, Deep Pujara was my mentor for a project in machine learning. He provided me with a solid foundation in classical machine learning, sharing his knowledge and expertise to help me quickly get up to speed on the background research. His leadership and technical guidance created a highly productive and collaborative environment. I am pleased to recommend Deep for his professionalism and dedication to fostering the growth of his mentees."</p>
-        </div>
-        
-        <div class="recommendation-card">
-          <div class="recommendation-header">
-            <div class="recommender-name">
-              Alexander Kain
-              <div class="recommender-title">Sr Principal AI Sys Engineer, Skyworks</div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Aug 2025 – Present</div>
+                    <div class="timeline-content">
+                        <h3 class="role-title">Graduate Teaching Associate</h3>
+                        <h4 class="course-name">EEE 598 – Deep Learning & EEE 515 – Computer Vision</h4>
+                        <p class="location">Arizona State University</p>
+                        <ul class="achievements">
+                            <li>Lead weekly lectures and labs teaching graduate students end-to-end deep learning workflows using PyTorch on GPU infrastructure.</li>
+                            <li>Cover comprehensive deep learning topics: perceptron/backprop, MLPs, CNNs, RNNs, Transformers/ViT, GANs, diffusion models.</li>
+                            <li>Mentor students through complete ML pipelines including data augmentation, training loops, hyperparameter tuning on ASU SOL supercomputer.</li>
+                            <li>Guide experiments on Intel Gaudi 2 AI Accelerator, enabling performance comparison with NVIDIA A100 GPUs.</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">GPUs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan 2023 – May 2025</div>
+                    <div class="timeline-content">
+                        <h3 class="role-title">Graduate Teaching Associate</h3>
+                        <h4 class="course-name">EEE 407 – Digital Signal Processing</h4>
+                        <p class="location">Arizona State University</p>
+                        <ul class="achievements">
+                            <li>Supported 200+ students in understanding core DSP concepts: FFT, digital filters, sampling theory.</li>
+                            <li>Conducted 2-3 interactive sessions per semester, facilitating practical problem-solving.</li>
+                            <li>Developed supplementary materials connecting theoretical concepts to industry applications.</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">MATLAB</span>
+                            <span class="tech-tag">Signal Processing</span>
+                            <span class="tech-tag">FFT</span>
+                            <span class="tech-tag">Filter Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 – 2025</div>
+                    <div class="timeline-content">
+                        <h3 class="role-title">NSF REU/RET Mentor</h3>
+                        <h4 class="course-name">Research Experience Programs</h4>
+                        <p class="location">SenSIP Lab, Arizona State University</p>
+                        <ul class="achievements">
+                            <li><strong>Mentored 15+ undergraduate researchers</strong> through NSF-funded REU and RET programs.</li>
+                            <li>Provided foundational training in MATLAB, Python, and machine learning for quantum computing research.</li>
+                            <li>Guided students through complete research lifecycle from literature review to publication-quality results.</li>
+                            <li>Helped students secure graduate school admissions and research positions.</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Research Mentorship</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">MATLAB</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <img class="recommender-logo" src="./assets/skyworks_logo.png" alt="Skyworks logo">
-          </div>
-          <p>"I found Deep to be an excellent team player, self-starter, great communicator of ideas, and precise scientific thinker about and quick implementer of highly complex ideas. He has made extremely valuable contributions to our team. I highly recommend him!"</p>
         </div>
+    </section>
 
-        <div class="recommendation-card">
-          <div class="recommendation-header">
-            <div class="recommender-name">
-              Jay Gupta
-              <div class="recommender-title">Sr Antenna Engineer, Intel</div>
+    <!-- Education Section -->
+    <section id="education" class="section education-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
             </div>
-            <img class="recommender-logo" src="./assets/Intel_logo.svg" alt="Intel logo">
-          </div>
-          <p>"During bachelor's program, Deep worked under my guidance for several projects, specifically in the domain of EM & antennas. I found him dedicated and sincere towards the work. I have noticed a good quality of proactiveness while working with him in collaboration. He always try to see the problem as a big picture and apply planned approach for the successful closure. I wish him a great success and happy to recommend his name for any future references."</p>
-        </div>
+            
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="degree-icon">
+                        <img src="./assets/ASU.png" alt="Arizona State University" class="university-logo">
+                    </div>
+                    <div class="degree-info">
+                        <h3 class="degree-title">Doctor of Philosophy in Electrical and Computer Engineering</h3>
+                        <p class="degree-duration">Jan 2024 – Present</p>
+                        <p class="university-name">Arizona State University, Tempe, Arizona</p>
+                        <p class="gpa">GPA: 3.83/4.00</p>
+                        <p class="specialization">Specialization: Deep Learning, Edge AI, Solar Energy Systems, Signal Processing, and Embedded Machine Learning</p>
+                    </div>
+                </div>
 
-        <div class="recommendation-card">
-          <div class="recommendation-header">
-            <div class="recommender-name">
-              Dr. Sachin Gajjar
-              <div class="recommender-title">Assoc Professor, NIRMA University</div>
+                <div class="education-card">
+                    <div class="degree-icon">
+                        <img src="./assets/ASU.png" alt="Arizona State University" class="university-logo">
+                    </div>
+                    <div class="degree-info">
+                        <h3 class="degree-title">Master of Science in Electrical Engineering</h3>
+                        <p class="degree-duration">Aug 2021 – Dec 2023</p>
+                        <p class="university-name">Arizona State University, Tempe, Arizona</p>
+                        <p class="gpa">GPA: 3.82/4.00</p>
+                        <p class="specialization">Specialization: Signal Processing, Machine Learning, and Solar Energy Systems</p>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <div class="degree-icon">
+                        <img src="./assets/Nirma.png" alt="Nirma University" class="university-logo">
+                    </div>
+                    <div class="degree-info">
+                        <h3 class="degree-title">Bachelor of Technology in Electronics and Communication Engineering</h3>
+                        <p class="degree-duration">Aug 2017 – May 2021</p>
+                        <p class="university-name">Nirma University, Ahmedabad, Gujarat, India</p>
+                        <p class="gpa">GPA: 8.11/10.00</p>
+                    </div>
+                </div>
             </div>
-            <img class="recommender-logo" src="./assets/Nirma.png" alt="Intel logo">
-          </div>
-          <p>"My interaction with Deep has been during his BTech study at Nirma University. He did a number of academic projects with me. During the project work, Deep demonstrated the ability to work independently with great creativity and enthusiasm. Deep is well organized, diligent, and a fast learner. He is one of the most dedicated student that I’ve worked with and is always willing to put extra efforts in all of the work assigned to him. I wish him success for all his endeavors."</p>
         </div>
+    </section>
 
-        <div class="recommendation-card">
-          <div class="recommendation-header">
-            <div class="recommender-name">
-              Dhruv Shah
-              <div class="recommender-title">Backend Developer, IBM</div>
+    <!-- Presentations Section -->
+    <section id="presentations" class="section presentations-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Presentations & Talks</h2>
+                <p class="section-subtitle">Technical presentations at conferences, universities, and industry events</p>
             </div>
-            <img class="recommender-logo" src="./assets/ibm.png" alt="Intel logo">
-          </div>
-          <p>"Deep is knowledgeable, articulate, and innovative person to work with. I have known him for quite a time during our educational journey and being a colleague and friend of him, he is someone I trusted and always looked forward to work with him. I have seen him closely working on different projects and have always analyzed his ability to bring integrity, innovation and intelligence to his work and also his managing skills. I believe his overall presence positively impacted the work and the people around him. I am very much sure that he will be an asset for any organization he will work with."</p>
-        </div>
+            
+            <div class="presentations-grid">
 
-        <div class="recommendation-card">
-          <div class="recommendation-header">
-            <div class="recommender-name">
-              Praveen Kukreja
-              <div class="recommender-title">Sr. Software Engineer, Crest Data</div>
+                <a href="https://www.linkedin.com/posts/deep07-pujara_artificialintelligence-guestlecture-airesearch-activity-7414509567533019137-x11w" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation-adani.jpeg" alt="Adani Foundation Talk" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>How Humans Taught Machines to Think</h3>
+                        <p class="pres-date">Adani University, Ahmedabad, India</p>
+                        <p class="pres-desc">Expert session on the evolution of AI and its applications in modern computing</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/deep07-pujara_yesterday-i-had-the-privilege-of-conducting-activity-7409116505889505282-AY6Z?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation-nirma.jpeg" alt="Nirma University Alumni Talk" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Introduction to Generative Pre-trained Transformers</h3>
+                        <p class="pres-date">Nirma University, Ahmedabad, Gujarat, India</p>
+                        <p class="pres-desc">Presented transformers architecture background, fundamentals and applications to students and faculty</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/deep07-pujara_i-recently-presented-my-research-progress-activity-7418014617685262336-d5_4?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation1.png" alt="PV Array Topology Optimization" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>PV Array Topology Optimization</h3>
+                        <p class="pres-date">SenSIP Industry Consortium</p>
+                        <p class="pres-desc">Research presentation on the use of embedded ML for PV topology optimization</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/deep07-pujara_deeplearning-teaching-asu-activity-7396951588591890436-WVIQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation-dl class.jpeg" alt="AI Architecture Teaching" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Deep Learning (EEE 598) Class Sessions</h3>
+                        <p class="pres-date">Arizona State University, Tempe, Arizona</p>
+                        <p class="pres-desc">14 classes explaining different DL architectures and their applications</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/deep07-pujara_embeddedml-edgeai-systolicarray-activity-7363316337781194752-ZhAo?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation0.jpeg" alt="Skyworks Presentation" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Summer 2025 Internship at Skyworks</h3>
+                        <p class="pres-date">Skyworks Solutions, Hillsboro, Oregon</p>
+                        <p class="pres-desc">Built a cycle-accurate Python simulator for systolic array accelerator</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/deep07-pujara_solarenergy-researchinaction-asu-activity-7338345300870213632-5NKg" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation2.jpg" alt="Applied Solar Energy Research" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Applied Solar Energy Research</h3>
+                        <p class="pres-date">REU & RET Programs @ SenSIP ASU</p>
+                        <p class="pres-desc">Demonstrated PhD research at ASU Research Park</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/deep07-pujara_peerreview-solarenergy-machinelearning-activity-7333282837422292994-zu0b" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation3.jpg" alt="Solar Energy Journal Reviewer" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Peer Review Service</h3>
+                        <p class="pres-date">Solar Energy Journal</p>
+                        <p class="pres-desc">Began reviewing manuscripts for Elsevier journal</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/deep07-pujara_embeddedml-solarenergy-pvsystems-activity-7323833832770523136-3leL" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation4.jpg" alt="Topology Reconfiguration" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Topology Reconfiguration with Embedded ML</h3>
+                        <p class="pres-date">UKIM–ASU Workshop</p>
+                        <p class="pres-desc">Presented my research work at a collaborative workshop with Ss. Cyril and Methodius University, Skopje, Macedonia.</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/deep07-pujara_reu-reu2025-nsf-activity-7321584721031794688-jlPR" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation5.jpg" alt="CISE REU PI Workshop" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Enhancing REU Experience</h3>
+                        <p class="pres-date">CISE REU PI Workshop</p>
+                        <p class="pres-desc">Represented the ASU-SenSIP REU site to discuss strategies for REU student engagement and pathways to graduate studies.</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/deep07-pujara_sensipcertificate-asu-machinelearning-activity-7279613013509201920-zamY" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation6.jpg" alt="SenSIP Certificate" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>SenSIP Certificate of Excellence</h3>
+                        <p class="pres-date">SenSIP Lab @ ASU</p>
+                        <p class="pres-desc">Recognition for my work and learning in the field of Sensor, Signal, and Information Processing.</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/asu-sensip_quantum-quantum-activity-7241162273614917632-vNmf?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation7.jpg" alt="Embedded ML Demo" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Embedded ML for Solar Monitoring</h3>
+                        <p class="pres-date">ITESM Delegation</p>
+                        <p class="pres-desc">Demonstrated our custom PV monitoring hardware to visiting professors from Tecnológico de Monterrey.</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/deep07-pujara_research-embeddedmachinelearning-ieeeconference-activity-7196295342974205953-NnG5" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation8.jpg" alt="IEEE ICPS 2024" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Real-time PV Fault Detection</h3>
+                        <p class="pres-date">IEEE ICPS Conference 2024</p>
+                        <p class="pres-desc">Conference presentation on embedded ML</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/deep07-pujara_renewableenergy-azsec2024-activity-7182531084457316352-XmIG" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation9.jpg" alt="Arizona Student Energy Conference" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Real-time PV Fault Detection</h3>
+                        <p class="pres-date">Arizona Student Energy Conference - 2024</p>
+                        <p class="pres-desc">Presented work on applying embedded ML for the immediate detection of faults in solar panels</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/deep07-pujara_summerinternship-learningandgrowing-skyworkssolutions-activity-7096983854233628672-z1P8" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation10.jpg" alt="Skyworks 2023" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Summer 2023 Internship</h3>
+                        <p class="pres-date">Skyworks Solutions, Austin, Texas</p>
+                        <p class="pres-desc">Engineered a custom PCB and C++ driver solution for USB to SPI bridge</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/deep07-pujara_i-am-pleased-to-share-that-i-recently-gave-activity-7052442210000138240-0SVt" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation11.jpg" alt="SenSIP Consortium 2023" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>PV Monitoring Device Implementation</h3>
+                        <p class="pres-date">SenSIP Industry Consortium</p>
+                        <p class="pres-desc">Outlined the design and implementation of a the photovoltaic monitoring device</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/deep07-pujara_i-am-pleased-to-share-that-i-recently-had-activity-7051267957951262721-B2fe?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation12.jpg" alt="AZSEC 2023" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Real-time PV Monitoring System</h3>
+                        <p class="pres-date">Arizona Student Energy Conference - 2023</p>
+                        <p class="pres-desc">Presented the design of a new intelligent device for monitoring and controlling photovoltaic systems</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/deep07-pujara_sensip-python-learning-activity-6949257007589715968-fbRb?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" target="_blank" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation13.jpg" alt="AZ Solar Conference" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Research Experience for Teachers (RET)</h3>
+                        <p class="pres-date">SenSIP Lab, ASU, Tempe, Arizona</p>
+                        <p class="pres-desc">Mentored K-12 teachers in the basics of MATLAB, Python, and Machine Learning</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/posts/deep07-pujara_opportunity-python-connections-activity-6934584400185622528-lUOt?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAgWpUB5-9xVbTxYhWI5871boseCZWlo6U" class="presentation-card">
+                    <div class="presentation-image">
+                        <img src="./assets/presentation14.jpg" alt="IoT Smart Grids" loading="lazy">
+                    </div>
+                    <div class="presentation-info">
+                        <h3>REU & IRES Programs</h3>
+                        <p class="pres-date">SenSIP Lab, ASU, Tempe, Arizona</p>
+                        <p class="pres-desc">Guided undergraduate students in the REU and IRES programs through the fundamentals of MATLAB and Python for their research projects.</p>
+                    </div>
+                </a>
             </div>
-            <img class="recommender-logo" src="./assets/crest.webp" alt="Intel logo">
-          </div>
-          <p>"Deep is one of the strongest technologist I have worked with. He has a quick grasping power, excellent deep dive and troubleshooting ability.He is a fast learner and even as an undergraduate student he was involved in some really challenging and innovative projects related to communications and programming. His enthusiasm is contagious. It was a pleasure to work with him and brainstorm any new idea."</p>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section-container" id="beyond-work">
-    <h2 class="section-heading">Beyond Work</h2>
-    <p class="section-intro">Outside of my professional work, I find joy in traveling to new places and experiencing diverse cultures. I carry my camera and drone wherever I go, capturing landscapes, moments, and stories that might otherwise go unnoticed. For me, photography is more than just taking pictures—it’s about preserving emotions and perspectives that words alone cannot express. I also enjoy editing my captures to bring out the essence of each scene, curating them into visual stories that I love to share with others. Traveling and creating in this way fuels my curiosity, inspires fresh perspectives, and keeps me connected to the beauty of the world around me.</p>
-    <div class="scroller-container">
-      <div class="scroller-track">
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Programming Languages</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <img src="./assets/Python.png" alt="Python">
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="./assets/Matlab.png" alt="MATLAB">
+                            <span>MATLAB</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="./assets/C++.png" alt="C++">
+                            <span>C++</span>
+                        </div>
+                    </div>
+                </div>
 
-      <div class="gallery-item">
-        <div class="gallery-media">
-          <img src="./assets/photo_video_edits/edit1.JPG" >
+                <div class="skill-category">
+                    <h3 class="skill-category-title">ML & Data Science</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <img src="./assets/Tensorflow.png" alt="TensorFlow">
+                            <span>TensorFlow</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="./assets/Pytorch.png" alt="PyTorch">
+                            <span>PyTorch</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="./assets/scikit-learn.png" alt="Scikit-learn">
+                            <span>Scikit-Learn</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="./assets/Numpy.png" alt="NumPy">
+                            <span>NumPy</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="./assets/pandas.png" alt="Pandas">
+                            <span>Pandas</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="./assets/Matplotlib.png" alt="Matplotlib">
+                            <span>Matplotlib</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Development Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <img src="./assets/vscode.png" alt="VS Code">
+                            <span>VS Code</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="./assets/git.png" alt="Git">
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="./assets/arduino.png" alt="Arduino">
+                            <span>Arduino IDE</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="./assets/simulink.jpg" alt="Simulink">
+                            <span>Simulink</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="./assets/latex.png" alt="LaTeX">
+                            <span>LaTeX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Hardware & Embedded Systems</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">Arduino UNO</span>
+                        <span class="skill-badge">Arduino BLE 33 Sense</span>
+                        <span class="skill-badge">ESP32</span>
+                        <span class="skill-badge">XBee S2C</span>
+                        <span class="skill-badge">Raspberry Pi</span>
+                        <span class="skill-badge">USB-SPI Bridge</span>
+                        <span class="skill-badge">OrCAD</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="gallery-item">
-        <div class="gallery-media">
-          <img src="./assets/photo_video_edits/edit2.JPG" >
-        </div>
-      </div>
+    <!-- Recommendations Section -->
+    <section id="recommendations" class="section recommendations-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Recommendations</h2>
+                <p class="section-subtitle">Testimonials from colleagues and mentors</p>
+            </div>
+            
+            <div class="recommendations-grid">
+                <div class="recommendation-card">
+                    <div class="recommender-header">
+                        <img src="./assets/skyworks_logo.png" alt="Skyworks" class="company-logo-small">
+                        <div class="recommender-info">
+                            <h4 class="recommender-name">Spencer Hann</h4>
+                            <p class="recommender-title">Senior Deep Learning Engineer</p>
+                            <p class="recommender-company">Skyworks Solutions, Inc.</p>
+                        </div>
+                    </div>
+                    <blockquote class="recommendation-text">
+                        "Deep was an excellent addition to our team over the Summer of 2025. We spent countless hours whiteboarding and then prototyping deep learning inference optimizations. He made substantive contributions to our platform and to the ideas we are exploring. His ability to quickly understand complex ideas and turn out prototypes was impressive."
+                    </blockquote>
+                </div>
 
-      <div class="gallery-item">
-        <div class="gallery-media">
-          <img src="./assets/photo_video_edits/edit3.JPG" >
-        </div>
-      </div>
+                <div class="recommendation-card">
+                    <div class="recommender-header">
+                        <img src="./assets/Onsemi_logo.png" alt="Skyworks" class="company-logo-small">
+                        <div class="recommender-info">
+                            <h4 class="recommender-name">Bhavikkumar Patel</h4>
+                            <p class="recommender-title">Product Engineer II</p>
+                            <p class="recommender-company">Onsemi</p>
+                        </div>
+                    </div>
+                    <blockquote class="recommendation-text">
+                        "I had the pleasure of working with Deep in the same research lab during my master's thesis. While our projects were different, we often brainstormed together, and I was always impressed by his ability to tackle complex problems with creative solutions. He is hardworking, passionate, and an excellent researcher. I strongly recommend him for any future opportunities."
+                    </blockquote>
+                </div>
 
-      <div class="gallery-item">
-        <div class="gallery-media">
-          <img src="./assets/photo_video_edits/edit4.jpeg" >
-        </div>
-      </div>
+                <div class="recommendation-card">
+                    <div class="recommender-header">
+                        <img src="./assets/skyworks_logo.png" alt="Skyworks" class="company-logo-small">
+                        <div class="recommender-info">
+                            <h4 class="recommender-name">Alexander Kain</h4>
+                            <p class="recommender-title">Sr Principal AI Systems Engineer</p>
+                            <p class="recommender-company">Skyworks Solutions, Inc.</p>
+                        </div>
+                    </div>
+                    <blockquote class="recommendation-text">
+                        "I found Deep to be an excellent team player, self-starter, great communicator of ideas, and precise scientific thinker about and quick implementer of highly complex ideas. He has made extremely valuable contributions to our team. I highly recommend him!"
+                    </blockquote>
+                </div>
 
-      <div class="gallery-item">
-        <div class="gallery-media">
-          <img src="./assets/photo_video_edits/edit5.jpeg" >
-        </div>
-      </div>
+                <div class="recommendation-card">
+                    <div class="recommender-header">
+                        <img src="./assets/ASU.png" alt="ASU" class="company-logo-small">
+                        <div class="recommender-info">
+                            <h4 class="recommender-name">Diego Reyes</h4>
+                            <p class="recommender-title">Sr Computer Science Student</p>
+                            <p class="recommender-company">Arizona State University</p>
+                        </div>
+                    </div>
+                    <blockquote class="recommendation-text">
+                        "During my time as an undergraduate research intern at ASU-SenSIP, Deep Pujara was my mentor for a project in machine learning. He provided me with a solid foundation in classical machine learning, sharing his knowledge and expertise to help me quickly get up to speed on the background research. His leadership and technical guidance created a highly productive and collaborative environment. I am pleased to recommend Deep for his professionalism and dedication to fostering the growth of his mentees."
+                    </blockquote>
+                </div>
 
-      <div class="gallery-item">
-        <div class="gallery-media">
-          <img src="./assets/photo_video_edits/edit6.jpeg" >
-        </div>
-      </div>
+                <div class="recommendation-card">
+                    <div class="recommender-header">
+                        <img src="./assets/Intel_logo.svg" alt="Intel" class="company-logo-small">
+                        <div class="recommender-info">
+                            <h4 class="recommender-name">Jay Gupta</h4>
+                            <p class="recommender-title">Sr Antenna Engineer</p>
+                            <p class="recommender-company">Intel Corporation</p>
+                        </div>
+                    </div>
+                    <blockquote class="recommendation-text">
+                        "During bachelor's program, Deep worked under my guidance for several projects, specifically in the domain of EM & antennas. I found him dedicated and sincere towards the work. I have noticed a good quality of proactiveness while working with him in collaboration. He always try to see the problem as a big picture and apply planned approach for the successful closure. I wish him a great success and happy to recommend his name for any future references."
+                    </blockquote>
+                </div>
 
-      <div class="gallery-item">
-        <div class="gallery-media">
-          <img src="./assets/photo_video_edits/edit7.jpeg" >
-        </div>
-      </div>
+                <div class="recommendation-card">
+                    <div class="recommender-header">
+                        <img src="./assets/Nirma.png" alt="Nirma University" class="company-logo-small">
+                        <div class="recommender-info">
+                            <h4 class="recommender-name">Dr. Sachin Gajjar</h4>
+                            <p class="recommender-title">Associate Professor</p>
+                            <p class="recommender-company">Nirma University</p>
+                        </div>
+                    </div>
+                    <blockquote class="recommendation-text">
+                        "My interaction with Deep has been during his BTech study at Nirma University. He did a number of academic projects with me. During the project work, Deep demonstrated the ability to work independently with great creativity and enthusiasm. Deep is well organized, diligent, and a fast learner. He is one of the most dedicated student that I've worked with and is always willing to put extra efforts in all of the work assigned to him. I wish him success for all his endeavors."
+                    </blockquote>
+                </div>
 
-      <div class="gallery-item">
-        <div class="gallery-media">
-          <img src="./assets/photo_video_edits/edit8.JPG" >
-        </div>
-      </div>
+                <div class="recommendation-card">
+                    <div class="recommender-header">
+                        <img src="./assets/ibm.png" alt="IBM" class="company-logo-small">
+                        <div class="recommender-info">
+                            <h4 class="recommender-name">Dhruv Shah</h4>
+                            <p class="recommender-title">Backend Developer</p>
+                            <p class="recommender-company">IBM</p>
+                        </div>
+                    </div>
+                    <blockquote class="recommendation-text">
+                        "Deep is knowledgeable, articulate, and innovative person to work with. I have known him for quite a time during our educational journey and being a colleague and friend of him, he is someone I trusted and always looked forward to work with him. I have seen him closely working on different projects and have always analyzed his ability to bring integrity, innovation and intelligence to his work and also his managing skills. I believe his overall presence positively impacted the work and the people around him."
+                    </blockquote>
+                </div>
 
-      <div class="gallery-item">
-        <div class="gallery-media">
-          <img src="./assets/photo_video_edits/edit9.JPG" >
+                <div class="recommendation-card">
+                    <div class="recommender-header">
+                        <img src="./assets/crest.webp" alt="Crest Data" class="company-logo-small">
+                        <div class="recommender-info">
+                            <h4 class="recommender-name">Praveen Kukreja</h4>
+                            <p class="recommender-title">Sr Software Engineer</p>
+                            <p class="recommender-company">Crest Data</p>
+                        </div>
+                    </div>
+                    <blockquote class="recommendation-text">
+                        "Deep is one of the strongest technologist I have worked with. He has a quick grasping power, excellent deep dive and troubleshooting ability. He is a fast learner and even as an undergraduate student he was involved in some really challenging and innovative projects related to communications and programming. His enthusiasm is contagious. It was a pleasure to work with him and brainstorm any new idea."
+                    </blockquote>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="gallery-item">
-        <div class="gallery-media">
-          <img src="./assets/photo_video_edits/edit10.JPG" >
-        </div>
-      </div>
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">Open to discussing research collaborations and opportunities in deep learning and edge AI</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:deeppujara27@gmail.com">deeppujara27@gmail.com</a>
+                        </div>
+                    </div>
 
-      <div class="gallery-item">
-        <div class="gallery-media">
-          <img src="./assets/photo_video_edits/edit11.JPG" >
-        </div>
-      </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Arizona, USA</p>
+                        </div>
+                    </div>
 
-      <div class="gallery-item">
-        <div class="gallery-media">
-          <img src="./assets/photo_video_edits/edit12.JPG" >
-        </div>
-      </div>
+                    <div class="contact-socials">
+                        <a href="https://www.linkedin.com/in/deep07-pujara/" target="_blank" rel="noopener noreferrer" class="social-btn">
+                            <img src="./assets/linkedin.png" alt="LinkedIn">
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/Deeppujara" target="_blank" rel="noopener noreferrer" class="social-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
 
-      <div class="gallery-item">
-        <div class="gallery-media">
-          <img src="./assets/photo_video_edits/edit13.JPG" >
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <!--
-      <div class="gallery-item">
-        <div class="gallery-media">
-        <video controls muted loop playsinline>
-          <source src="assets/drone_video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Deep Pujara. All rights reserved.</p>
+            </div>
         </div>
-      </div>
-      -->
-      </div>
-     </div>
-   </section>
-
-  <section class="section-container" id="contact">
-    <div class="contact-container">
-        <div class="contact-info">
-            <h2 class="contact-heading">Contact</h2>
-            <h3>Looking to start a project or just want to chat about AI?</h3>
-            <p>I'm always open to discussing new opportunities and innovative ideas. Feel free to reach out.</p>
-            <a href="mailto:deeppujara27@gmail.com">deeppujara27@gmail.com</a>
-        </div>
-        <div class="contact-form-wrapper">
-          <form id="contact-form">
-             <div class="input-group">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-              </div>
-                <textarea name="message" placeholder="Message..." required></textarea>
-                <button type="submit">Send Message</button>
-          </form>
-        </div>
-    </div>
-  </section>
-
-    <footer id="page-footer">
-        <p>© 2025 Deep Pujara. All rights reserved. | <a href="#" id="privacy-policy-link">Privacy Policy</a></p>
     </footer>
 
-    <div class="feedback-fab" id="feedback-fab" title="Share Feedback">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 11h-2.5l-1.91 1.91c-.14.14-.33.21-.53.21-.2-.01-.39-.08-.53-.21L11.5 13H9c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h10c.55 0 1 .45 1 1v5c0 .55-.45 1-1 1z"/>
-        </svg>
-         <span>Feedback</span>
-    </div>
-
-    <div class="feedback-modal-overlay" id="feedback-modal-overlay">
-         <div class="feedback-modal" id="feedback-modal">
-            <button class="close-modal-btn" id="close-feedback-modal" title="Close">×</button>
-            <div class="feedback-content-wrapper">
-                <h3>Share Your Feedback</h3>
-                <p>How would you rate my portfolio?</p>
-                <div class="star-rating" id="star-rating">
-                    <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span><span class="star" data-value="3">★</span><span class="star" data-value="4">★</span><span class="star" data-value="5">★</span>
-                </div>
-                <form class="feedback-form" id="feedback-form">
-                    <textarea id="feedback-text" placeholder="Any suggestions or comments? (Optional)"></textarea>
-                    <button type="submit" class="feedback-submit-btn" id="feedback-submit-btn">Submit</button>
-                </form>
-            </div>
-            <div class="feedback-thank-you" id="feedback-thank-you">
-                <h3>Thank You!</h3>
-                <p>I appreciate you taking the time to share your thoughts.</p>
-             </div>
-        </div>
-    </div>
-
-    <div class="privacy-modal-overlay" id="privacy-modal-overlay">
-        <div class="privacy-modal">
-            <a href="#" class="close-privacy-btn" id="close-privacy-modal" title="Close">×</a>
-            <h2>Privacy Policy</h2>
-            <p><em>Last Updated: August 20, 2025</em></p>
-            <p>This Privacy Policy describes how your personal information is collected, used, and shared when you visit or interact with this website.</p>
-
-            <h3>Personal Information We Collect</h3>
-            <p>When you interact with the site, we may collect the following information:</p>
-            <ul>
-                <li><strong>Contact Information:</strong> When you use the contact form, we collect your name and email address to respond to your inquiry.</li>
-                <li><strong>Feedback Information:</strong> If you use the feedback form, we collect your star rating and any comments you provide to help improve the website.</li>
-                <li><strong>Chatbot Interactions:</strong> We log the questions you ask the AI assistant to monitor usage, improve its responses, and understand user needs. We do not collect personal identifiers with these questions.</li>
-                <li><strong>Usage Data:</strong> Like many websites, we use Google Analytics to collect standard internet log information and details of visitor behavior patterns. This helps us find out things such as the number of visitors to the various parts of the site. This information is only processed in a way which does not identify anyone.</li>
-          </ul>
-
-            <h3>How We Use Your Information</h3>
-            <p>We use the information we collect to:</p>
-            <ul>
-                <li>Communicate with you and respond to your inquiries.</li>
-                <li>Improve the website, its features, and the user experience based on your feedback.</li>
-                <li>Analyze and enhance the performance and accuracy of the AI assistant.</li>
-                <li>Monitor and analyze trends and usage in connection with our website.</li>
-            </ul>
-
-          <h3>Sharing Your Information</h3>
-          <p>We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties. Your trust is important, and your data will be used solely for the purposes stated above.</p>
-
-            <h3>Your Rights</h3>
-            <p>You have the right to access personal information we hold about you and to ask that your personal information be corrected, updated, or deleted. If you would like to exercise this right, please contact me at <a href="mailto:deeppujara27@gmail.com">deeppujara27@gmail.com</a>.</p>
-
-            <h3>Changes</h3>
-            <p>We may update this privacy policy from time to time in order to reflect, for example, changes to our practices or for other operational, legal, or regulatory reasons.</p>
-        </div>
-    </div>
-
-    <div class="toast-notification" id="toast-notification"></div>
-
-  <script src="./js/main.js" defer></script>
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
 </body>
 </html>
