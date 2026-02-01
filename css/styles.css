@@ -1609,3 +1609,149 @@ img {
         line-height: 1.5;
     }
 }
+/* ============================================
+   Honors & Awards Section
+   ============================================ */
+
+.honors-section {
+    background-color: var(--background);
+}
+
+.honors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.honor-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+}
+
+.honor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.honor-image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background-color: var(--background-light);
+}
+
+.honor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.honor-card:hover .honor-image img {
+    transform: scale(1.05);
+}
+
+.honor-content {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.honor-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.honor-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.honor-organization {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.honor-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.honor-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    margin-top: auto;
+}
+
+.honor-link:hover {
+    color: var(--accent-blue);
+    gap: 0.75rem;
+}
+
+/* Responsive Design for Honors Section */
+@media (max-width: 768px) {
+    .honors-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .honor-image {
+        height: 200px;
+    }
+    
+    .honor-content {
+        padding: 1.5rem;
+    }
+    
+    .honor-title {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .honor-image {
+        height: 180px;
+    }
+    
+    .honor-content {
+        padding: 1.25rem;
+    }
+    
+    .honor-title {
+        font-size: 1.125rem;
+    }
+    
+    .honor-description {
+        font-size: 0.9375rem;
+    }
+}
