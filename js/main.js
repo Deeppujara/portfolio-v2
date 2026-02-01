@@ -177,12 +177,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact Form Handling
     // ====================================
     const contactForm = document.getElementById('contactForm');
-    
+
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Get form data
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            if (!submitBtn) return;
+
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
             const formData = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
@@ -190,28 +196,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 message: document.getElementById('message').value
             };
             
-            // For now, just show a success message
-            // In production, you would send this to a backend service
-            alert('Thank you for your message! I will get back to you soon.');
-            
-            // Reset form
-            contactForm.reset();
-            
-            // In production, you would implement actual form submission like:
-            // fetch('/api/contact', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify(formData)
-            // })
-            // .then(response => response.json())
-            // .then(data => {
-            //     alert('Message sent successfully!');
-            //     contactForm.reset();
-            // })
-            // .catch(error => {
-            //     alert('Failed to send message. Please try again.');
-            //     console.error('Error:', error);
-            // });
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (!response.ok) {
+                    // If the server returned an error (4xx or 5xx)
+                    throw new Error(`Server error: ${response.statusText}`);
+                }
+
+                // This only runs on a successful submission
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+
+            } catch (error) {
+                console.error('Error submitting contact form:', error);
+                alert('Sorry, there was an issue sending your message. Please contact me directly via email.');
+            } finally {
+                // This always runs, whether it succeeded or failed
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
         });
     }
     
