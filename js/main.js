@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isVisible) {
                 // Hide publications
                 allPublicationsContainer.style.display = 'none';
-                viewAllBtn.textContent = 'View All Publications (11 total)';
+                viewAllBtn.textContent = 'View All Publications (12 total)';
                 
                 // Scroll back to the featured publications
                 setTimeout(() => {
